@@ -1,0 +1,70 @@
+{
+  "root": "./src",
+  "title": "webpack-docs",
+  "author" : "Eleven",
+  "links" : {
+    "sidebar" : {
+        "Eleven" : "https://github.com/Eleven90"
+    }
+  },
+  "language" : "zh-hans",
+  "styles": {
+    "website": "./assets/styles/website.css",
+    "ebook": "./assets/styles/ebook.css",
+    "pdf": "./assets/styles/pdf.css",
+    "mobi": "./assets/styles/mobile.css",
+    "epub": "./assets/styles/epub.css"
+  },
+  "plugins": [
+    "-sharing",
+    "-lunr",
+    "-search",
+    "github-buttons",
+    "simple-page-toc",
+    "ace",
+    "splitter",
+    "anchors",
+    "back-to-top-button",
+    "theme-vuejs-2",
+    "favicon",
+    "pageview-count",
+    "lightbox",
+    "tbfed-pagefooter",
+    "hide-element",
+    "code-optimize",
+    "search-pro-fixed"
+  ],
+  "pluginsConfig": {
+    "github-buttons": {
+      "buttons": [{
+        "user": "webpack-template",
+        "type": "follow",
+        "size": "small",
+        "width": 185,
+        "count": false
+      }]
+    },
+    "simple-page-toc": {
+      "maxDepth": 3,
+      "skipFirstH1": true
+    },
+    "fontsettings": {
+      "theme": "white",
+      "family": "serif"
+    },
+    "favicon":{
+      "shortcut": "./assets/images/favicon.ico",
+      "bookmark": "./assets/images/favicon.ico"
+    },
+    "tbfed-pagefooter": {
+      "modify_label": "Last modified time：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "hide-element": {
+      "elements": [".gitbook-link", ".copyright"]
+    },
+    "code-optimize": {
+      "showLines": false
+    }
+  }
+}
