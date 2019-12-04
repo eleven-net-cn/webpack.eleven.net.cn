@@ -26,6 +26,7 @@
 * [集成eslint](./content/eslint.md)
 * [常见性能优化](./content/optimize.md)
 * [修改 node_moduels 的包](https://github.com/ds300/patch-package)
+* [模块间循环引用问题](./content/circular.md)
 * [create-react-app 中 webpack 改造]()
   * [编译期判断环境：test、uat、production]()
   * [添加中添加 watch 模式]()
