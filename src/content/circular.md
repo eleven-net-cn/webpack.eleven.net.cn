@@ -35,6 +35,8 @@ module.exports = {
 
 ![](../assets/images/circular_modules.png)
 
+如何解决循环引用的问题？将被循环引用到的模块提取放到另外的模块，打破这个循环即可！
+
 #### 参考文档
 
 1. [webpack 与循环引用](https://www.imooc.com/article/260265)
