@@ -77,3 +77,9 @@
           ]
         }
         ```
+
+5. 一些预设级别的特性默认情况下是不包含的（文档：https://babeljs.io/docs/en/v7-migration#remove-proposal-polyfills-in-babel-polyfill-https-githubcom-babel-babel-issues-8416）， 如果想要包含：
+
+    ```js
+    import "core-js/shim"; // included < Stage 4 proposals
+    ```
