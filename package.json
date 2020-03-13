@@ -1,7 +1,7 @@
 {
   "name": "webpack-docs",
   "version": "1.0.0",
-  "description": "webpack 配置备忘录",
+  "description": "webpack 搭建备忘录",
   "main": "index.js",
   "scripts": {
     "dev": "gitbook serve",
@@ -10,17 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/webpack-template/webpack-docs.git"
+    "url": "git@e.coding.net:Eleven2016/webpack-docs.git"
   },
   "keywords": [
     "webpack"
   ],
   "author": "Eleven",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/webpack-template/webpack-docs/issues"
-  },
-  "homepage": "https://github.com/webpack-template/webpack-docs#readme",
   "devDependencies": {
     "gh-pages": "^2.1.1",
     "gitbook-cli": "^2.3.2"
