@@ -37,11 +37,11 @@
   "pluginsConfig": {
     "github-buttons": {
       "buttons": [{
-        "user": "webpack-template",
-        "type": "follow",
+        "user": "Eleven90",
+        "repo": "webpack-template",
+        "type": "star",
         "size": "small",
-        "width": 185,
-        "count": false
+        "count": true
       }]
     },
     "simple-page-toc": {
