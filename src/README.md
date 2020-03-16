@@ -1,7 +1,7 @@
-# [webpack-template](https://github.com/webpack-template/webpack-template)
+# [webpack-template](https://github.com/Eleven90/webpack-template)
 
 > &emsp;&emsp;为懒人准备的 webpack 模版，可以直接用于生产。这里单纯只做webpack构建、打包、代码的组织等，关于React、Vue等配置并不复杂，可以在需要时添加。随着webpack版本的迭代，会将最新的特性加入，持续更新...... 有空就写一点 ~,~  
-> &emsp;&emsp;Demo源码：[https://github.com/webpack-template/webpack-template](https://github.com/webpack-template/webpack-template)
+> &emsp;&emsp;示例源码：[https://github.com/Eleven90/webpack-template](https://github.com/Eleven90/webpack-template)
 
 ## 版本
 
