@@ -2,6 +2,21 @@
 
 1. [speed-measure-webpack-plugin](https://github.com/stephencookdev/speed-measure-webpack-plugin) 分析 webpack 编译过程中，各个 plugin、loader 等耗费的时间
 
+    示例
+
+    ```js
+    const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
+    ```
+
+    ```js
+    const smp = new SpeedMeasurePlugin({
+        // 默认通过 console.log 在终端直接输出
+        // 如果配置此项，可以将内容输出在指定目录（目录需先手动创建好）下的指定文件（文件会自动创建）
+        outputTarget: path.resolve(__dirname, `../log`, `performance.${new Date().getTime()}.log`)
+    })
+    webpackConfig = smp.wrap(webpackConfig) // webpackConfig 是你原先的 webpack 配置
+    ```
+
 2. [webpack-monitor](https://github.com/webpackmonitor/webpackmonitor) 分析打包产物。
 
     示例
