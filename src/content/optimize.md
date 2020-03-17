@@ -6,7 +6,6 @@
 
     ```js
     const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
-
     
     const smp = new SpeedMeasurePlugin({
         // 默认通过 console.log 在终端直接输出
@@ -22,7 +21,6 @@
 
     ```js
     const WebpackMonitor = require('webpack-monitor')
-
 
     ...
     plugins: [
