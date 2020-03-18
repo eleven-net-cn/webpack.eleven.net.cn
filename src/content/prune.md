@@ -33,6 +33,23 @@ webpack提供的 externals，可以在打包时将该模块移除（即不打包
 
         在运行打包以后，应用中的 jquery 包即被替换为全局变量 `window.jQuery`。
 
+        打包后的结果大概是下面的样子。
+
+        ```js
+        ({
+          0: function(...) {
+              var jQuery = require(1);
+              /* ... */
+          },
+          1: function(...) {
+            // 很明显这里是把window.jQuery赋值给了module.exports
+            // 因此我们便可以使用require来引入了。
+            module.exports = jQuery;
+          },
+            /* ... */
+        });
+        ```
+
     3. 使用你打包产出的代码，需要预先准备 jQuery 环境，即：script 标签引入。
 
         ```html
