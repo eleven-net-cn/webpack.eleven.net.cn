@@ -1,4 +1,4 @@
-## 自动修改 node_moduels 的包
+## 自动修改 node_moduels 的包源码
 
 有时候 node_modules 中的第三方包有问题或需要修改几行源码，我们可以怎么办？
 

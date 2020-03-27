@@ -25,7 +25,7 @@
 * [配置 http-server](./content/http-server.md)
 * [集成eslint](./content/eslint.md)
 * [常见性能优化](./content/optimize.md)
-* [自动修改 node_moduels 的包](./content/patch-package.md)
+* [自动修改 node_moduels 的包源码](./content/patch-package.md)
 * [模块间循环引用问题](./content/circular.md)
 * [create-react-app 中改造 webpack]()
   * [编译期判断环境：test、uat、production]()
