@@ -20,6 +20,7 @@
 * [在 webpack 中引入未模块化的库](./content/module.md)
 * [externals 打包时排除某些模块](./content/prune.md)
 * [打包js库时的应用](./content/library.md)
+* [在打包的文件头部添加 Banner 信息](./content/banner.md)
 * [移除严格模式](https://babeljs.io/docs/en/babel-plugin-transform-strict-mode)
 * [配置 node express 服务](./content/node-server.md)
 * [配置 http-server](./content/http-server.md)
