@@ -23,11 +23,17 @@
     const WebpackMonitor = require('webpack-monitor')
     const { version } = require('../package')
 
+    function getTime () {
+        const now = new Date()
+
+        return `${now.getFullYear()}${now.getMonth() + 1}${now.getDate()}_${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+    }
+    
     ...
     plugins: [
         // http://webpackmonitor.com/
         new WebpackMonitor({
-            target: `../monitor/stats-v${version}-${+new Date()}.json`, // 输出的JSON统计文件的路径（相对于构建目录）
+            target: `../monitor/stats_v${version}_${getTime()}.json`, // 输出的JSON统计文件的路径（相对于构建目录）
             launch: false, // 是否启动分析面板
             // capture: true, // 如果当前版本与先前版本不同，则捕获当前版本的统计信息
             // port: 3030, // 启动时为Webpack Monitor仪表板提供服务的端口
