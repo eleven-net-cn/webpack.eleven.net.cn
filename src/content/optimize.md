@@ -6,11 +6,12 @@
 
     ```js
     const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
+    const timestamp = require('time-stamp')
     
     const smp = new SpeedMeasurePlugin({
         // 默认通过 console.log 在终端直接输出
         // 如果配置此项，可以将内容输出在指定目录（目录需先手动创建好）下的指定文件（文件会自动创建）
-        outputTarget: path.resolve(__dirname, `../log`, `performance.${new Date().getTime()}.log`)
+        outputTarget: path.resolve(__dirname, `../log`, `performance_${timestamp('YYYYMMDD_HH:mm:ss')}.log`)
     })
     webpackConfig = smp.wrap(webpackConfig) // webpackConfig 是你原先的 webpack 配置
     ```
@@ -21,19 +22,14 @@
 
     ```js
     const WebpackMonitor = require('webpack-monitor')
+    const timestamp = require('time-stamp')
     const { version } = require('../package')
 
-    function getTime () {
-        const now = new Date()
-
-        return `${now.getFullYear()}${now.getMonth() + 1}${now.getDate()}_${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
-    }
-    
     ...
     plugins: [
         // http://webpackmonitor.com/
         new WebpackMonitor({
-            target: `../monitor/stats_v${version}_${getTime()}.json`, // 输出的JSON统计文件的路径（相对于构建目录）
+            target: `../monitor/stats_v${version}_${timestamp('YYYYMMDD_HH:mm:ss')}.json`, // 输出的JSON统计文件的路径（相对于构建目录）
             launch: false, // 是否启动分析面板
             // capture: true, // 如果当前版本与先前版本不同，则捕获当前版本的统计信息
             // port: 3030, // 启动时为Webpack Monitor仪表板提供服务的端口
