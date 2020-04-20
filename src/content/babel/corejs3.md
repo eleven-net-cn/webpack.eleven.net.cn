@@ -1,4 +1,4 @@
-1. 以上是core-js@2的配置，而core-js@3的更新，带来了新的变化，**@babel/polyfill无法提供core-js@2向core-js@3过渡，所以现在有新的方案去替代@babel/polyfill，**（需要Babel版本升级到7.4.0及以上），详细可以阅读官方的几篇文档：
+1. 以上是core-js@2的配置，而core-js@3的更新，带来了新的变化，**@babel/polyfill无法提供core-js@2向core-js@3过渡，所以现在有新的方案去替代@babel/polyfill，**（需要 babel-loader 版本升级到 8.0.0 以上，@babel/core 版本升级到 7.4.0 及以上），详细可以阅读官方的几篇文档：
     1. [作者的官方阐述](https://github.com/zloirock/core-js/blob/master/docs/2019-03-19-core-js-3-babel-and-a-look-into-the-future.md)
     2. [Babel 7.4.0版本的更新内容，及官方的升级建议](https://babeljs.io/blog/2019/03/19/7.4.0)
     3. [core-js@2向core-js@3升级，官方的Pull request](https://github.com/babel/babel/pull/7646)
@@ -10,7 +10,7 @@
     1. 安装依赖
 
         ```sh
-        yarn add babel-loader@8 @babel/core @babel/preset-env -D
+        yarn add babel-loader @babel/core @babel/preset-env -D
         yarn add core-js regenerator-runtime
         ```
     2. .babelrc配置
@@ -47,7 +47,7 @@
     1. 安装依赖
 
         ```sh
-        yarn add babel-loader@8 @babel/core @babel/preset-env @babel/plugin-transform-runtime -D
+        yarn add babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime -D
         yarn add @babel/runtime-corejs3
         ```
 

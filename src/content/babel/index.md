@@ -5,7 +5,7 @@
 1. 基础依赖包
 
    ```js
-   yarn add babel-loader@8 @babel/core -D
+   yarn add babel-loader @babel/core -D
    ```
 
    > 从 babel7 开始，所有的官方插件和主要模块，都放在了 @babel 的命名空间下。从而可以避免在 npm 仓库中 babel 相关名称被抢注的问题。

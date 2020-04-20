@@ -164,7 +164,7 @@ core-js(v2)这个库有两个核心的文件夹，分别是 library 和 modules�
         2. 需要安装的全部依赖：
 
             ```js
-            yarn add babel-loader@8 @babel/core @babel/preset-env -D
+            yarn add babel-loader @babel/core @babel/preset-env -D
             yarn add @babel/polyfill
             ```
 
@@ -191,7 +191,7 @@ core-js(v2)这个库有两个核心的文件夹，分别是 library 和 modules�
         1. 需要安装的全部依赖：
 
             ```js
-            yarn add babel-loader@8 @babel/core @babel/preset-env @babel/plugin-transform-runtime -D
+            yarn add babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime -D
             yarn add @babel/runtime-corejs2
             ```
 
