@@ -38,6 +38,22 @@
     ...
     ```
 
+3. [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) 分析打包产物
+
+    示例
+
+    ```js
+    const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+
+    ...
+    plugins: [
+        new BundleAnalyzerPlugin({
+            ...
+        }),
+    ]
+    ...
+    ```
+
 3. 使用happypack来优化，多进程运行编译，参考文档：
 
     1. [webpack 优化之 HappyPack 实战](https://www.jianshu.com/p/b9bf995f3712)
