@@ -47,8 +47,12 @@
 
     ...
     plugins: [
+        // https://www.npmjs.com/package/webpack-bundle-analyzer
+        // 演示直接输出 html 文件形式
         new BundleAnalyzerPlugin({
-            ...
+            analyzerMode: 'static', // html 文件方式输出编译分析
+            openAnalyzer: false,
+            reportFilename: path.resolve(__dirname, '..', `analyzer/index.html`),
         }),
     ]
     ...
