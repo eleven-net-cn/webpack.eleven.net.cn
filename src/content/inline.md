@@ -120,3 +120,13 @@ raw-loader 默认生成使用 ES 模块语法的 JS 模块，需要注意一下�
 
 参考文档：[webpack使用raw-loader内联静态资源失效](https://blog.csdn.net/weixin_43711917/article/details/105748406)
 
+
+### 总结
+
+综合上面几种方法，都能实现，各有一点区别。
+
+1. react-dev-utils/InlineChunkHtmlPlugin 在 CRA 创建的项目里使用，处理 runtime 代码很合适；只能将打包的产物文件内联。
+
+2. inline-source-webpack-plugin 既可以将某个文件内联，也可以将打包的产物内联；但是，直接内联某个文件，该文件不会经过 babel 转译，要注意这个问题。
+
+3. raw-loader 只能将某个文件内联，不能将打包的产物内联；内联的某个文件可以经过 babel 转译。
