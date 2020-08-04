@@ -1,0 +1,821 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>内联 js/css 等资源 · webpack-docs</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Eleven">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code-optimize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro-fixed/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../assets/styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="reference.html" />
+    
+    
+    <link rel="prev" href="circular.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Eleven90","repo":"webpack-template","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/Eleven90" target="_blank" class="custom-link">Eleven</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="entry.html">
+            
+                <a href="entry.html">
+            
+                    
+                    自动扫描入口js、HTML模版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="babel/">
+            
+                <a href="babel/">
+            
+                    
+                    Babel 7 转码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="babel/preset-env.html">
+            
+                <a href="babel/preset-env.html">
+            
+                    
+                    @babel/preset-env
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="babel/polyfill.html">
+            
+                <a href="babel/polyfill.html">
+            
+                    
+                    @babel/polyfill
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="babel/transform-runtime.html">
+            
+                <a href="babel/transform-runtime.html">
+            
+                    
+                    @babel/plugin-transform-runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="babel/polyfill-or-runtime.html">
+            
+                <a href="babel/polyfill-or-runtime.html">
+            
+                    
+                    polyfill方案的对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="babel/proposal.html">
+            
+                <a href="babel/proposal.html">
+            
+                    
+                    提案级别的插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="babel/decorators.html">
+            
+                <a href="babel/decorators.html">
+            
+                    
+                    装饰器语法支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="babel/import.html">
+            
+                <a href="babel/import.html">
+            
+                    
+                    动态导入支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="babel/corejs3.html">
+            
+                <a href="babel/corejs3.html">
+            
+                    
+                    corejs 3 的更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="style.html">
+            
+                <a href="style.html">
+            
+                    
+                    CSS样式的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="media.html">
+            
+                <a href="media.html">
+            
+                    
+                    图片、字体、多媒体等资源的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="dev-server.html">
+            
+                <a href="dev-server.html">
+            
+                    
+                    配置dev-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="alias.html">
+            
+                <a href="alias.html">
+            
+                    
+                    模块配置别名、扩展名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="provide.html">
+            
+                <a href="provide.html">
+            
+                    
+                    全局注入模块，省去到处导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="define.html">
+            
+                <a href="define.html">
+            
+                    
+                    注入应用的全局变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="module.html">
+            
+                <a href="module.html">
+            
+                    
+                    在 webpack 中引入未模块化的库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="prune.html">
+            
+                <a href="prune.html">
+            
+                    
+                    externals 打包时排除某些模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="library.html">
+            
+                <a href="library.html">
+            
+                    
+                    打包js库时的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="banner.html">
+            
+                <a href="banner.html">
+            
+                    
+                    在打包的文件头部添加 Banner 信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <a target="_blank" href="https://babeljs.io/docs/en/babel-plugin-transform-strict-mode">
+            
+                    
+                    移除严格模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="node-server.html">
+            
+                <a href="node-server.html">
+            
+                    
+                    配置 node express 服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="http-server.html">
+            
+                <a href="http-server.html">
+            
+                    
+                    配置 http-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="eslint.html">
+            
+                <a href="eslint.html">
+            
+                    
+                    集成eslint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="optimize.html">
+            
+                <a href="optimize.html">
+            
+                    
+                    常见性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="patch-package.html">
+            
+                <a href="patch-package.html">
+            
+                    
+                    自动修改 node_moduels 的包源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="circular.html">
+            
+                <a href="circular.html">
+            
+                    
+                    模块间循环引用问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.21" data-path="inline.html">
+            
+                <a href="inline.html">
+            
+                    
+                    内联 js/css 等资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="reference.html">
+            
+                <a href="reference.html">
+            
+                    
+                    参考文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >内联 js/css 等资源</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h2 id="&#x5185;&#x8054;-jscss-&#x7B49;&#x8D44;&#x6E90;"><a name="&#x5185;&#x8054;-jscss-&#x7B49;&#x8D44;&#x6E90;" class="plugin-anchor" href="#&#x5185;&#x8054;-jscss-&#x7B49;&#x8D44;&#x6E90;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x8054; js/css &#x7B49;&#x8D44;&#x6E90;</h2>
+<p>&#x5728;&#x67D0;&#x4E9B;&#x7279;&#x6B8A;&#x573A;&#x666F;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x5E0C;&#x671B;&#x5C06; js/css &#x7B49;&#x8D44;&#x6E90;&#xFF0C;&#x76F4;&#x63A5;&#x901A;&#x8FC7; style/script &#x6807;&#x7B7E;&#x7684;&#x5F62;&#x5F0F;&#x63D2;&#x5165;&#x5230; html &#x4E2D;&#x3002;</p>
+<p>&#x6BD4;&#x8F83;&#x5E38;&#x89C1;&#x7684;&#x5982;&#xFF1A;</p>
+<ol>
+<li><p>runtime &#x4EE3;&#x7801;&#xFF0C;&#x56E0;&#x4E3A;&#x4F53;&#x79EF;&#x6781;&#x5C0F;&#xFF0C;&#x5355;&#x72EC;&#x6210;&#x6587;&#x4EF6;&#x53EA;&#x4F1A;&#x589E;&#x52A0; http &#x8BF7;&#x6C42;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x4E0D;&#x5982;&#x76F4;&#x63A5;&#x653E;&#x7F6E;&#x5230; html &#x9875;&#x9762;&#x4E0A;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x79FB;&#x52A8;&#x7AEF;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528; REM &#x65B9;&#x6848;&#xFF0C;&#x8FD9;&#x6BB5; js &#x7684;&#x8BA1;&#x7B97;&#x4EE3;&#x7801;&#xFF0C;&#x5E94;&#x5F53;&#x5C3D;&#x53EF;&#x80FD;&#x65E9;&#x7684;&#x52A0;&#x8F7D;&#x3001;&#x6267;&#x884C;&#xFF0C;&#x5C3D;&#x65E9;&#x7684;&#x786E;&#x5B9A; html &#x6839;&#x6807;&#x7B7E;&#x7684; <code>font-size</code>&#x3002;</p>
+</li>
+</ol>
+<p>&#x5728; webpack &#x6253;&#x5305;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x60F3;&#x8981;&#x5B9E;&#x73B0;&#xFF0C;&#x5927;&#x6982;&#x53EF;&#x4EE5;&#x6709;&#x4EE5;&#x4E0B; 3 &#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
+<h3 id="react-dev-utilsinlinechunkhtmlplugin"><a name="react-dev-utilsinlinechunkhtmlplugin" class="plugin-anchor" href="#react-dev-utilsinlinechunkhtmlplugin"><i class="fa fa-link" aria-hidden="true"></i></a>react-dev-utils/InlineChunkHtmlPlugin</h3>
+<p>React &#x5B98;&#x65B9;&#x5728; CRA &#x811A;&#x624B;&#x67B6;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x53BB;&#x5C06;&#x6307;&#x5B9A;&#x7684; chunk &#x5185;&#x8054;&#x5230; html&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;html-webpack-plugin&apos;</span>)
+<span class="hljs-keyword">const</span> InlineChunkHtmlPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;react-dev-utils/InlineChunkHtmlPlugin&apos;</span>)
+
+<span class="hljs-built_in">module</span>.exports = {
+  ...
+  plugins: [
+    <span class="hljs-comment">// &#x6570;&#x7EC4;&#x4E2D;&#x6307;&#x5B9A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x53BB;&#x5339;&#x914D;</span>
+    <span class="hljs-keyword">new</span> InlineChunkHtmlPlugin(HtmlWebpackPlugin, [<span class="hljs-regexp">/runtime~.+[.]js/</span>]),
+  ],
+  ...
+}
+</code></pre>
+<p>&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x7528;&#x4E8E;&#x5339;&#x914D; webpack <strong>&#x6253;&#x5305;&#x540E;&#x7684;&#x4EA7;&#x7269;</strong>&#xFF0C;&#x547D;&#x4E2D;&#x7684;&#x5C06;&#x4F1A;&#x88AB;&#x5185;&#x8054;&#x5230; html&#xFF0C;&#x6CE8;&#x610F;&#x9700;&#x8981;&#x4F9D;&#x8D56; <code>html-webpack-plugin</code>&#x3002;</p>
+<p>&#x5982;&#x679C;&#x662F;&#x975E; CRA &#x521B;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x793E;&#x533A;&#x7684;&#x8FD9;&#x4E2A;&#x5305; <a href="https://www.npmjs.com/package/inline-chunk-html-plugin" target="_blank">inline-chunk-html-plugin</a> &#x3002;</p>
+<h3 id="inline-source-webpack-plugin"><a name="inline-source-webpack-plugin" class="plugin-anchor" href="#inline-source-webpack-plugin"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/KyLeoHC/inline-source-webpack-plugin" target="_blank">inline-source-webpack-plugin</a></h3>
+<p>&#x6B64; plugin &#x9002;&#x7528; webpack4 &#x4EE5;&#x4E0A;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x4F4E;&#x7248;&#x672C; webpack&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="https://github.com/KyLeoHC/inline-resource-plugin" target="_blank">inline-resource-plugin</a> &#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ol>
+<li><p>&#x5728; webpack &#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;&#x63D2;&#x4EF6;&#x914D;&#x7F6E;&#xFF0C;&#x6CE8;&#x610F;&#x9700;&#x8981;&#x4F9D;&#x8D56; <code>html-webpack-plugin</code> &#x3002;</p>
+<pre><code class="lang-js"> <span class="hljs-comment">// webpack.config.js</span>
+ <span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;html-webpack-plugin&apos;</span>)
+ <span class="hljs-keyword">const</span> InlineSourceWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;inline-source-webpack-plugin&apos;</span>)
+
+ <span class="hljs-built_in">module</span>.exports = {
+   ...
+   plugins: [
+     <span class="hljs-keyword">new</span> HtmlWebpackPlugin({
+       ...
+     }),
+     <span class="hljs-keyword">new</span> InlineSourceWebpackPlugin({
+       compress: <span class="hljs-literal">true</span>,
+       rootpath: <span class="hljs-string">&apos;./src&apos;</span>, <span class="hljs-comment">// &#x53EF;&#x4EE5;&#x6307;&#x5B9A; plugin &#x5904;&#x7406;&#x65F6;&#x7684;&#x6839;&#x76EE;&#x5F55;&#xFF08;&#x4ECE;&#x9879;&#x76EE;&#x7684;&#x6839;&#x76EE;&#x5F55;&#x5F00;&#x59CB;&#xFF09;</span>
+       noAssetMatch: <span class="hljs-string">&apos;warn&apos;</span>
+     }),
+   ],
+   ...
+ }
+</code></pre>
+</li>
+<li><p>&#x5728; html &#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0; script &#x6807;&#x7B7E;&#xFF0C;&#x6307;&#x5B9A; inline&#x3001;inline-asset&#x3001;inline-asset-delete &#x7B49;&#x5C5E;&#x6027;&#x3002;</p>
+<p> &#x5185;&#x8054;&#x9879;&#x76EE;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x6216;&#x8005;&#x5185;&#x8054; webpack &#x7684;&#x7F16;&#x8BD1;&#x4EA7;&#x7269;&#x6587;&#x4EF6;&#xFF0C;&#x4E24;&#x8005;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x7565;&#x6709;&#x533A;&#x522B;&#xFF0C;&#x8BF7;&#x770B;&#x4E0B;&#x65B9;&#x6CE8;&#x91CA;&#x3002;</p>
+<pre><code class="lang-html"> <span class="hljs-comment">&lt;!-- html &#x6587;&#x4EF6; --&gt;</span>
+ <span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;zh-CN&quot;</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;inline.css&quot;</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+     <span class="hljs-comment">&lt;!-- 1&#x3001;&#x76F4;&#x63A5;&#x586B;&#x5199;&#x8DEF;&#x5F84;&#x3001;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x5373;&#x53EF;&#x88AB;&#x5185;&#x8054;&#xFF08;&#x6CE8;&#x610F;&#xFF1A;&#x9009;&#x4E2D;&#x5185;&#x8054;&#x7684;&#x6587;&#x4EF6;&#x4EE3;&#x7801;&#x4E0D;&#x4F1A;&#x7ECF;&#x8FC7; babel &#x8F6C;&#x8BD1;&#xFF09; --&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;lib/inline~rem.js&quot;</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>hello world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+     <span class="hljs-comment">&lt;!-- 2&#x3001;&apos;inline-asset&apos; &#x5C5E;&#x6027;&#x4F1A;&#x53BB;&#x5339;&#x914D; webpack &#x7684;&#x6253;&#x5305;&#x4EA7;&#x7269;&#xFF0C;&#x5C06;&#x547D;&#x4E2D;&#x7684;&#x4EA7;&#x7269;&#x5185;&#x8054;&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x4F60;&#x53EF;&#x80FD;&#x8981;&#x7559;&#x610F;&#x4EA7;&#x7269;&#x6587;&#x4EF6;&#x548C; runtime &#x6587;&#x4EF6;&#x7684;&#x5148;&#x540E;&#x987A;&#x5E8F;&#x3002; --&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">inline</span> <span class="hljs-attr">inline-asset</span>=<span class="hljs-string">&quot;runtime\.\w+\.js$&quot;</span> <span class="hljs-attr">inline-asset-delete</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">inline</span> <span class="hljs-attr">inline-asset</span>=<span class="hljs-string">&quot;bundle\.\w+\.js$&quot;</span> <span class="hljs-attr">inline-asset-delete</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="raw-loader"><a name="raw-loader" class="plugin-anchor" href="#raw-loader"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/webpack-contrib/raw-loader" target="_blank">raw-loader</a></h3>
+<p>raw-loader &#x4E00;&#x822C;&#x6027;&#x7684;&#x4F7F;&#x7528;&#x662F;&#xFF1A;&#x5C06;&#x67D0;&#x6A21;&#x5757;&#x6587;&#x4EF6;&#x8F6C;&#x6210;&#x5B57;&#x7B26;&#x4E32;&#x8F93;&#x51FA;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5C06;&#x67D0;&#x6587;&#x4EF6;&#x5185;&#x8054;&#x5230; html&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<p>&#x5B89;&#x88C5;&#x8FC7; raw-loader &#x4EE5;&#x540E;&#xFF0C;&#x5728; html &#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x4E0B; script &#x6807;&#x7B7E;&#x3002;&#x4F9D;&#x8D56;&#x7684;&#x662F; <code>html-webpack-plugin</code> &#x6765;&#x8BC6;&#x522B;&#x8BE5;&#x8BED;&#x6CD5;&#xFF08;&#x5982;&#x679C; html-webpack-plugin &#x63D2;&#x4EF6;&#x662F;&#x6BD4;&#x8F83;&#x65E7;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x8BED;&#x6CD5;&#x9700;&#x8981;&#x6709;&#x70B9;&#x533A;&#x522B;&#xFF09;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- html &#x6587;&#x4EF6; --&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;zh-CN&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+      &lt;%=<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;raw-loader!babel-loader!../src/lib/inline~rem.js&apos;</span>).default%&gt;
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x7F16;&#x5199; require &#x8BED;&#x53E5;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x591A;&#x4E2A; loader &#x53BB;&#x5904;&#x7406;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;&#x4E0A;&#x65B9;&#x5373;&#x6307;&#x5B9A;&#x4E86; <code>babel-loader</code> &#x5904;&#x7406;&#x3002;</p>
+<p>raw-loader &#x9ED8;&#x8BA4;&#x751F;&#x6210;&#x4F7F;&#x7528; ES &#x6A21;&#x5757;&#x8BED;&#x6CD5;&#x7684; JS &#x6A21;&#x5757;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4E00;&#x4E0B;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x4F7F;&#x7528;&#x51FA;&#x9519;&#x6216;&#x4E0D;&#x751F;&#x6548;&#x3002;</p>
+<p>&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF1A;<a href="https://blog.csdn.net/weixin_43711917/article/details/105748406" target="_blank">webpack&#x4F7F;&#x7528;raw-loader&#x5185;&#x8054;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x5931;&#x6548;</a></p>
+<h3 id="&#x603B;&#x7ED3;"><a name="&#x603B;&#x7ED3;" class="plugin-anchor" href="#&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x603B;&#x7ED3;</h3>
+<p>&#x7EFC;&#x5408;&#x4E0A;&#x9762;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x90FD;&#x80FD;&#x5B9E;&#x73B0;&#xFF0C;&#x5404;&#x6709;&#x4E00;&#x70B9;&#x533A;&#x522B;&#x3002;</p>
+<ol>
+<li><p>react-dev-utils/InlineChunkHtmlPlugin &#x5728; CRA &#x521B;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#x91CC;&#x4F7F;&#x7528;&#xFF0C;&#x5904;&#x7406; runtime &#x4EE3;&#x7801;&#x5F88;&#x5408;&#x9002;&#xFF1B;&#x53EA;&#x80FD;&#x5C06;&#x6253;&#x5305;&#x7684;&#x4EA7;&#x7269;&#x6587;&#x4EF6;&#x5185;&#x8054;&#x3002;</p>
+</li>
+<li><p>inline-source-webpack-plugin &#x65E2;&#x53EF;&#x4EE5;&#x5C06;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x5185;&#x8054;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;&#x6253;&#x5305;&#x7684;&#x4EA7;&#x7269;&#x5185;&#x8054;&#xFF1B;&#x4F46;&#x662F;&#xFF0C;&#x76F4;&#x63A5;&#x5185;&#x8054;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x4E0D;&#x4F1A;&#x7ECF;&#x8FC7; babel &#x8F6C;&#x8BD1;&#xFF0C;&#x8981;&#x6CE8;&#x610F;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+</li>
+<li><p>raw-loader &#x53EA;&#x80FD;&#x5C06;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x5185;&#x8054;&#xFF0C;&#x4E0D;&#x80FD;&#x5C06;&#x6253;&#x5305;&#x7684;&#x4EA7;&#x7269;&#x5185;&#x8054;&#xFF1B;&#x5185;&#x8054;&#x7684;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x7ECF;&#x8FC7; babel &#x8F6C;&#x8BD1;&#x3002; </p>
+</li>
+</ol>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">Last modified time&#xFF1A;
+2020-08-04 11:16:55
+</span></footer></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="circular.html" class="navigation navigation-prev " aria-label="Previous page: 模块间循环引用问题">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="reference.html" class="navigation navigation-next " aria-label="Next page: 参考文档">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"内联 js/css 等资源","level":"1.21","depth":1,"next":{"title":"参考文档","level":"1.22","depth":1,"path":"content/reference.md","ref":"./content/reference.md","articles":[]},"previous":{"title":"模块间循环引用问题","level":"1.20","depth":1,"path":"content/circular.md","ref":"./content/circular.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","github-buttons","simple-page-toc","ace","splitter","anchors","back-to-top-button","theme-vuejs-2","favicon","pageview-count","lightbox","tbfed-pagefooter","hide-element","code-optimize","search-pro-fixed"],"root":"./src","styles":{"website":"./assets/styles/website.css","ebook":"./assets/styles/ebook.css","pdf":"./assets/styles/pdf.css","mobi":"./assets/styles/mobile.css","epub":"./assets/styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"Last modified time：","modify_format":"YYYY-MM-DD HH:mm:ss"},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro-fixed":{},"theme-vuejs-2":{},"hide-element":{"elements":[".gitbook-link",".copyright"]},"fontsettings":{"theme":"white","family":"serif","size":2},"highlight":{},"favicon":{"shortcut":"./assets/images/favicon.ico","bookmark":"./assets/images/favicon.ico"},"lightbox":{"jquery":true},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Eleven90","repo":"webpack-template","type":"star","size":"small","count":true}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"code-optimize":{"copyButtons":true,"showLines":false},"anchors":{}},"theme":"default","author":"Eleven","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack-docs","language":"zh-hans","links":{"sidebar":{"Eleven":"https://github.com/Eleven90"}},"gitbook":"*"},"file":{"path":"content/inline.md","mtime":"2020-08-04T03:16:55.454Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-04T04:03:45.900Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code-optimize/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

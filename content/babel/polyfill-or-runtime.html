@@ -1,0 +1,934 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>polyfill方案的对比 · webpack-docs</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Eleven">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code-optimize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro-fixed/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../assets/styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="proposal.html" />
+    
+    
+    <link rel="prev" href="transform-runtime.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Eleven90","repo":"webpack-template","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/Eleven90" target="_blank" class="custom-link">Eleven</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../entry.html">
+            
+                <a href="../entry.html">
+            
+                    
+                    自动扫描入口js、HTML模版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Babel 7 转码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="preset-env.html">
+            
+                <a href="preset-env.html">
+            
+                    
+                    @babel/preset-env
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="polyfill.html">
+            
+                <a href="polyfill.html">
+            
+                    
+                    @babel/polyfill
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="transform-runtime.html">
+            
+                <a href="transform-runtime.html">
+            
+                    
+                    @babel/plugin-transform-runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="polyfill-or-runtime.html">
+            
+                <a href="polyfill-or-runtime.html">
+            
+                    
+                    polyfill方案的对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="proposal.html">
+            
+                <a href="proposal.html">
+            
+                    
+                    提案级别的插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="decorators.html">
+            
+                <a href="decorators.html">
+            
+                    
+                    装饰器语法支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="import.html">
+            
+                <a href="import.html">
+            
+                    
+                    动态导入支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="corejs3.html">
+            
+                <a href="corejs3.html">
+            
+                    
+                    corejs 3 的更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../style.html">
+            
+                <a href="../style.html">
+            
+                    
+                    CSS样式的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../media.html">
+            
+                <a href="../media.html">
+            
+                    
+                    图片、字体、多媒体等资源的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../dev-server.html">
+            
+                <a href="../dev-server.html">
+            
+                    
+                    配置dev-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../alias.html">
+            
+                <a href="../alias.html">
+            
+                    
+                    模块配置别名、扩展名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../provide.html">
+            
+                <a href="../provide.html">
+            
+                    
+                    全局注入模块，省去到处导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../define.html">
+            
+                <a href="../define.html">
+            
+                    
+                    注入应用的全局变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../module.html">
+            
+                <a href="../module.html">
+            
+                    
+                    在 webpack 中引入未模块化的库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../prune.html">
+            
+                <a href="../prune.html">
+            
+                    
+                    externals 打包时排除某些模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../library.html">
+            
+                <a href="../library.html">
+            
+                    
+                    打包js库时的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../banner.html">
+            
+                <a href="../banner.html">
+            
+                    
+                    在打包的文件头部添加 Banner 信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <a target="_blank" href="https://babeljs.io/docs/en/babel-plugin-transform-strict-mode">
+            
+                    
+                    移除严格模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../node-server.html">
+            
+                <a href="../node-server.html">
+            
+                    
+                    配置 node express 服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../http-server.html">
+            
+                <a href="../http-server.html">
+            
+                    
+                    配置 http-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../eslint.html">
+            
+                <a href="../eslint.html">
+            
+                    
+                    集成eslint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../optimize.html">
+            
+                <a href="../optimize.html">
+            
+                    
+                    常见性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../patch-package.html">
+            
+                <a href="../patch-package.html">
+            
+                    
+                    自动修改 node_moduels 的包源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../circular.html">
+            
+                <a href="../circular.html">
+            
+                    
+                    模块间循环引用问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../inline.html">
+            
+                <a href="../inline.html">
+            
+                    
+                    内联 js/css 等资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../reference.html">
+            
+                <a href="../reference.html">
+            
+                    
+                    参考文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >polyfill方案的对比</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h3 id="babelpolyfill-&#x8FD8;&#x662F;-babelplugin-transform-runtime-&#xFF1F;"><a name="babelpolyfill-&#x8FD8;&#x662F;-babelplugin-transform-runtime-&#xFF1F;" class="plugin-anchor" href="#babelpolyfill-&#x8FD8;&#x662F;-babelplugin-transform-runtime-&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>@babel/polyfill &#x8FD8;&#x662F; @babel/plugin-transform-runtime &#xFF1F;</h3>
+<ol>
+<li><p><code>@babel/preset-env + @babel/polyfill</code>&#x53EF;&#x4EE5;&#x8F6C;&#x8BD1;&#x8BED;&#x6CD5;&#x3001;&#x65B0; API&#xFF0C;&#x4F46;&#x5B58;&#x5728;&#x6C61;&#x67D3;&#x5168;&#x5C40;&#x95EE;&#x9898;&#xFF1B;</p>
+</li>
+<li><p><code>@babel/preset-env + @babel/plugin-transform-runtime + @babel/runtime-corejs2</code>&#xFF0C;&#x53EF;&#x6309;&#x9700;&#x5BFC;&#x5165;&#xFF0C;&#x8F6C;&#x8BD1;&#x8BED;&#x6CD5;&#x3001;&#x65B0; API&#xFF0C;&#x4E14;&#x907F;&#x514D;&#x5168;&#x5C40;&#x6C61;&#x67D3;&#xFF08;babel7 &#x4E2D;@babel/polyfill &#x662F;@babel/runtime-corejs2 &#x7684;&#x522B;&#x540D;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x68C0;&#x6D4B;&#x4E0D;&#x5230;&#x2018;hello&#x2018;.includes(&#x2018;h&#x2018;)&#x8FD9;&#x79CD;&#x53E5;&#x6CD5;&#xFF1B;</p>
+</li>
+<li><p>@babel/polyfill &#x548C;@babel/runtime-corejs2 &#x90FD;&#x4F7F;&#x7528;&#x4E86; core-js(v2)&#x8FD9;&#x4E2A;&#x5E93;&#x6765;&#x8FDB;&#x884C; api &#x7684;&#x5904;&#x7406;&#x3002;<br>core-js(v2)&#x8FD9;&#x4E2A;&#x5E93;&#x6709;&#x4E24;&#x4E2A;&#x6838;&#x5FC3;&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5206;&#x522B;&#x662F; library &#x548C; modules&#x3002;@babel/runtime-corejs2 &#x4F7F;&#x7528; library &#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;@babel/polyfill &#x4F7F;&#x7528; modules &#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x3002;</p>
+<ol>
+<li>library &#x4F7F;&#x7528; helper &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5C40;&#x90E8;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A; api&#xFF0C;&#x4E0D;&#x4F1A;&#x6C61;&#x67D3;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF1B; </li>
+<li>modules &#x4EE5;&#x6C61;&#x67D3;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0; api&#xFF1B;</li>
+<li><p>library &#x548C; modules &#x5305;&#x542B;&#x7684;&#x6587;&#x4EF6;&#x57FA;&#x672C;&#x76F8;&#x540C;&#xFF0C;&#x6700;&#x5927;&#x7684;&#x4E0D;&#x540C;&#x662F;_export.js &#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF1A;</p>
+<p> modules</p>
+<pre><code class="lang-js"> <span class="hljs-comment">// core-js/modules/_exports.js</span>
+ <span class="hljs-keyword">var</span> global = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./_global&apos;</span>);
+ <span class="hljs-keyword">var</span> core = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./_core&apos;</span>);
+ <span class="hljs-keyword">var</span> hide = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./_hide&apos;</span>);
+ <span class="hljs-keyword">var</span> redefine = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./_redefine&apos;</span>);
+ <span class="hljs-keyword">var</span> ctx = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./_ctx&apos;</span>);
+ <span class="hljs-keyword">var</span> PROTOTYPE = <span class="hljs-string">&apos;prototype&apos;</span>;
+
+ <span class="hljs-keyword">var</span> $<span class="hljs-keyword">export</span> = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">type, name, source</span>) </span>{
+   <span class="hljs-keyword">var</span> IS_FORCED = type &amp; $<span class="hljs-keyword">export</span>.F;
+   <span class="hljs-keyword">var</span> IS_GLOBAL = type &amp; $<span class="hljs-keyword">export</span>.G;
+   <span class="hljs-keyword">var</span> IS_STATIC = type &amp; $<span class="hljs-keyword">export</span>.S;
+   <span class="hljs-keyword">var</span> IS_PROTO = type &amp; $<span class="hljs-keyword">export</span>.P;
+   <span class="hljs-keyword">var</span> IS_BIND = type &amp; $<span class="hljs-keyword">export</span>.B;
+   <span class="hljs-keyword">var</span> target = IS_GLOBAL ? global : IS_STATIC ? global[name] || (global[name] = {}) : (global[name] || {})[PROTOTYPE];
+   <span class="hljs-keyword">var</span> exports = IS_GLOBAL ? core : core[name] || (core[name] = {});
+   <span class="hljs-keyword">var</span> expProto = exports[PROTOTYPE] || (exports[PROTOTYPE] = {});
+   <span class="hljs-keyword">var</span> key, own, out, exp;
+   <span class="hljs-keyword">if</span> (IS_GLOBAL) source = name;
+   <span class="hljs-keyword">for</span> (key <span class="hljs-keyword">in</span> source) {
+     <span class="hljs-comment">// contains in native</span>
+     own = !IS_FORCED &amp;&amp; target &amp;&amp; target[key] !== <span class="hljs-literal">undefined</span>;
+     <span class="hljs-comment">// export native or passed</span>
+     out = (own ? target : source)[key];
+     <span class="hljs-comment">// bind timers to global for call from export context</span>
+     exp = IS_BIND &amp;&amp; own ? ctx(out, global) : IS_PROTO &amp;&amp; <span class="hljs-keyword">typeof</span> out == <span class="hljs-string">&apos;function&apos;</span> ? ctx(<span class="hljs-built_in">Function</span>.call, out) : out;
+     <span class="hljs-comment">// extend global</span>
+     <span class="hljs-keyword">if</span> (target) redefine(target, key, out, type &amp; $<span class="hljs-keyword">export</span>.U);
+     <span class="hljs-comment">// export</span>
+     <span class="hljs-keyword">if</span> (exports[key] != out) hide(exports, key, exp);
+     <span class="hljs-keyword">if</span> (IS_PROTO &amp;&amp; expProto[key] != out) expProto[key] = out;
+   }
+ };
+ global.core = core;
+ <span class="hljs-comment">// type bitmap</span>
+ $<span class="hljs-keyword">export</span>.F = <span class="hljs-number">1</span>;   <span class="hljs-comment">// forced</span>
+ $<span class="hljs-keyword">export</span>.G = <span class="hljs-number">2</span>;   <span class="hljs-comment">// global</span>
+ $<span class="hljs-keyword">export</span>.S = <span class="hljs-number">4</span>;   <span class="hljs-comment">// static</span>
+ $<span class="hljs-keyword">export</span>.P = <span class="hljs-number">8</span>;   <span class="hljs-comment">// proto</span>
+ $<span class="hljs-keyword">export</span>.B = <span class="hljs-number">16</span>;  <span class="hljs-comment">// bind</span>
+ $<span class="hljs-keyword">export</span>.W = <span class="hljs-number">32</span>;  <span class="hljs-comment">// wrap</span>
+ $<span class="hljs-keyword">export</span>.U = <span class="hljs-number">64</span>;  <span class="hljs-comment">// safe</span>
+ $<span class="hljs-keyword">export</span>.R = <span class="hljs-number">128</span>; <span class="hljs-comment">// real proto method for `library`</span>
+ <span class="hljs-built_in">module</span>.exports = $<span class="hljs-keyword">export</span>;
+</code></pre>
+<p> library</p>
+<pre><code class="lang-js"> <span class="hljs-comment">// core-js/library/_exports.js</span>
+ <span class="hljs-keyword">var</span> global = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./_global&apos;</span>);
+ <span class="hljs-keyword">var</span> core = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./_core&apos;</span>);
+ <span class="hljs-keyword">var</span> ctx = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./_ctx&apos;</span>);
+ <span class="hljs-keyword">var</span> hide = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./_hide&apos;</span>);
+ <span class="hljs-keyword">var</span> has = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./_has&apos;</span>);
+ <span class="hljs-keyword">var</span> PROTOTYPE = <span class="hljs-string">&apos;prototype&apos;</span>;
+
+ <span class="hljs-keyword">var</span> $<span class="hljs-keyword">export</span> = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">type, name, source</span>) </span>{
+   <span class="hljs-keyword">var</span> IS_FORCED = type &amp; $<span class="hljs-keyword">export</span>.F;
+   <span class="hljs-keyword">var</span> IS_GLOBAL = type &amp; $<span class="hljs-keyword">export</span>.G;
+   <span class="hljs-keyword">var</span> IS_STATIC = type &amp; $<span class="hljs-keyword">export</span>.S;
+   <span class="hljs-keyword">var</span> IS_PROTO = type &amp; $<span class="hljs-keyword">export</span>.P;
+   <span class="hljs-keyword">var</span> IS_BIND = type &amp; $<span class="hljs-keyword">export</span>.B;
+   <span class="hljs-keyword">var</span> IS_WRAP = type &amp; $<span class="hljs-keyword">export</span>.W;
+   <span class="hljs-keyword">var</span> exports = IS_GLOBAL ? core : core[name] || (core[name] = {});
+   <span class="hljs-keyword">var</span> expProto = exports[PROTOTYPE];
+   <span class="hljs-keyword">var</span> target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE];
+   <span class="hljs-keyword">var</span> key, own, out;
+   <span class="hljs-keyword">if</span> (IS_GLOBAL) source = name;
+   <span class="hljs-keyword">for</span> (key <span class="hljs-keyword">in</span> source) {
+     <span class="hljs-comment">// contains in native</span>
+     own = !IS_FORCED &amp;&amp; target &amp;&amp; target[key] !== <span class="hljs-literal">undefined</span>;
+     <span class="hljs-keyword">if</span> (own &amp;&amp; has(exports, key)) <span class="hljs-keyword">continue</span>;
+     <span class="hljs-comment">// export native or passed</span>
+     out = own ? target[key] : source[key];
+     <span class="hljs-comment">// prevent global pollution for namespaces</span>
+     exports[key] = IS_GLOBAL &amp;&amp; <span class="hljs-keyword">typeof</span> target[key] != <span class="hljs-string">&apos;function&apos;</span> ? source[key]
+     <span class="hljs-comment">// bind timers to global for call from export context</span>
+     : IS_BIND &amp;&amp; own ? ctx(out, global)
+     <span class="hljs-comment">// wrap global constructors for prevent change them in library</span>
+     : IS_WRAP &amp;&amp; target[key] == out ? (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">C</span>) </span>{
+       <span class="hljs-keyword">var</span> F = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b, c</span>) </span>{
+         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span> <span class="hljs-keyword">instanceof</span> C) {
+           <span class="hljs-keyword">switch</span> (<span class="hljs-built_in">arguments</span>.length) {
+             <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> C();
+             <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> C(a);
+             <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> C(a, b);
+           } <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> C(a, b, c);
+         } <span class="hljs-keyword">return</span> C.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>);
+       };
+       F[PROTOTYPE] = C[PROTOTYPE];
+       <span class="hljs-keyword">return</span> F;
+     <span class="hljs-comment">// make static versions for prototype methods</span>
+     })(out) : IS_PROTO &amp;&amp; <span class="hljs-keyword">typeof</span> out == <span class="hljs-string">&apos;function&apos;</span> ? ctx(<span class="hljs-built_in">Function</span>.call, out) : out;
+     <span class="hljs-comment">// export proto methods to core.%CONSTRUCTOR%.methods.%NAME%</span>
+     <span class="hljs-keyword">if</span> (IS_PROTO) {
+       (exports.virtual || (exports.virtual = {}))[key] = out;
+       <span class="hljs-comment">// export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%</span>
+       <span class="hljs-keyword">if</span> (type &amp; $<span class="hljs-keyword">export</span>.R &amp;&amp; expProto &amp;&amp; !expProto[key]) hide(expProto, key, out);
+     }
+   }
+ };
+ <span class="hljs-comment">// type bitmap</span>
+ $<span class="hljs-keyword">export</span>.F = <span class="hljs-number">1</span>;   <span class="hljs-comment">// forced</span>
+ $<span class="hljs-keyword">export</span>.G = <span class="hljs-number">2</span>;   <span class="hljs-comment">// global</span>
+ $<span class="hljs-keyword">export</span>.S = <span class="hljs-number">4</span>;   <span class="hljs-comment">// static</span>
+ $<span class="hljs-keyword">export</span>.P = <span class="hljs-number">8</span>;   <span class="hljs-comment">// proto</span>
+ $<span class="hljs-keyword">export</span>.B = <span class="hljs-number">16</span>;  <span class="hljs-comment">// bind</span>
+ $<span class="hljs-keyword">export</span>.W = <span class="hljs-number">32</span>;  <span class="hljs-comment">// wrap</span>
+ $<span class="hljs-keyword">export</span>.U = <span class="hljs-number">64</span>;  <span class="hljs-comment">// safe</span>
+ $<span class="hljs-keyword">export</span>.R = <span class="hljs-number">128</span>; <span class="hljs-comment">// real proto method for `library`</span>
+ <span class="hljs-built_in">module</span>.exports = $<span class="hljs-keyword">export</span>;
+</code></pre>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;library&#x4E0B;&#x7684;&#x8FD9;&#x4E2A;$export&#x65B9;&#x6CD5;&#xFF0C;&#x4F1A;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;wrapper&#x51FD;&#x6570;&#xFF0C;&#x9632;&#x6B62;&#x6C61;&#x67D3;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;</p>
+</li>
+<li><p>&#x4F8B;&#x5982;&#x5BF9;Promise&#x7684;&#x8F6C;&#x8BD1;&#xFF0C;@babel/polyfill&#x548C;@babel/runtime-corejs2&#x7684;&#x8F6C;&#x8BD1;&#x65B9;&#x5F0F;&#x5DEE;&#x5F02;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code class="lang-js"> <span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>();
+
+ <span class="hljs-comment">// @babel/polyfill</span>
+ <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;core-js/modules/es6.promise&quot;</span>);
+ <span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>();
+
+ <span class="hljs-comment">// @babel/runtime-corejs2</span>
+ <span class="hljs-keyword">var</span> _interopRequireDefault = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@babel/runtime-corejs2/helpers/interopRequireDefault&quot;</span>);
+ <span class="hljs-keyword">var</span> _promise = _interopRequireDefault(<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@babel/runtime-corejs2/core-js/promise&quot;</span>));
+ <span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> _promise.default();
+</code></pre>
+</li>
+<li><p>&#x4ECE;&#x4E0A;&#x9762;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5BF9;&#x4E8E;Promise&#x8FD9;&#x4E2A;api&#xFF0C;@babel/polyfill&#x5F15;&#x7528;&#x4E86;core-js/modules&#x4E2D;&#x7684;es6.promise.js&#x6587;&#x4EF6;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x5BF9;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x6240;&#x4EE5;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x4E0D;&#x7528;&#x505A;&#x5904;&#x7406;&#xFF1B;@babel/runtime-corejs2&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;_promise&#xFF0C;&#x7136;&#x540E;&#x628A;Promise&#x90FD;&#x66FF;&#x6362;&#x6210;_promise&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x4F1A;&#x6C61;&#x67D3;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E86;&#x3002;</p>
+</li>
+</ol>
+</li>
+<li><p><strong>&#x7EFC;&#x5408;&#x4E0A;&#x9762;&#x7684;&#x5206;&#x6790;&#xFF0C;&#x5F97;&#x51FA;&#x7ED3;&#x8BBA;&#xFF1A;</strong></p>
+<ol>
+<li><p>&#x5982;&#x679C;&#x662F;&#x81EA;&#x5DF1;&#x7684;&#x5E94;&#x7528;&#xFF1A; <code>@babel/preset-env + @babel/polyfill</code></p>
+<ol>
+<li><p>&#x6839;&#x636E;useBuiltIns&#x53C2;&#x6570;&#x786E;&#x5B9A;&#x5982;&#x4F55;&#x4F7F;&#x7528;@babel/polyfill&#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x603B;&#x7ED3;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li><p><code>useBuiltIns</code>&#x8BBE;&#x7F6E;&#x4E3A;<code>entry</code>&#x6BD4;&#x8F83;&#x4E0D;&#x9519;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x3002;<br>&#x5728;js&#x4EE3;&#x7801;&#x7B2C;&#x4E00;&#x884C;<code>import &apos;@babel/polyfill&apos;</code>&#xFF0C;&#x6216;&#x5728;webpack&#x7684;&#x5165;&#x53E3;entry&#x4E2D;&#x5199;&#x5165;&#x6A21;&#x5757;<code>@babel/polyfill</code>&#xFF0C;&#x4F1A;&#x5C06;browserslist&#x73AF;&#x5883;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x6240;&#x6709;&#x57AB;&#x7247;&#x90FD;&#x5BFC;&#x5165;&#xFF1B;
+&#x80FD;&#x591F;&#x8986;&#x76D6;&#x5230;<code>&#x2018;hello&#x2018;.includes(&#x2018;h&#x2018;)</code>&#x8FD9;&#x79CD;&#x53E5;&#x6CD5;&#xFF0C;&#x8DB3;&#x591F;&#x5B89;&#x5168;&#x4E14;&#x4EE3;&#x7801;&#x4F53;&#x79EF;&#x4E0D;&#x662F;&#x7279;&#x522B;&#x5927;&#xFF01;</p>
+</li>
+<li><p><code>useBuiltIns</code>&#x8BBE;&#x7F6E;&#x4E3A;<code>usage</code>&#x3002;<br>&#x9879;&#x76EE;&#x91CC;&#x4E0D;&#x7528;&#x4E3B;&#x52A8;import&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x4EE3;&#x7801;&#x91CC;&#x5DF2;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x3001;&#x4E14;browserslist&#x73AF;&#x5883;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x57AB;&#x7247;&#x5BFC;&#x5165;&#xFF1B;
+&#x76F8;&#x5BF9;&#x5B89;&#x5168;&#x4E14;&#x6253;&#x5305;&#x7684;js&#x4F53;&#x79EF;&#x4E0D;&#x5927;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x8F6C;&#x8BD1;&#x90FD;&#x4F1A;&#x6392;&#x9664;<code>node_modules/</code>&#x76EE;&#x5F55;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x6709;&#x4E2A;&#x522B;&#x672A;&#x505A;&#x597D;ES6&#x8F6C;&#x8BD1;&#xFF0C;&#x6709;&#x9047;&#x5230;bug&#x7684;&#x53EF;&#x80FD;&#x6027;&#xFF0C;&#x5E76;&#x4E14;&#x68C0;&#x6D4B;&#x4E0D;&#x5230;<code>&#x2018;hello&#x2018;.includes(&#x2018;h&#x2018;)</code>&#x8FD9;&#x79CD;&#x53E5;&#x6CD5;&#x3002;
+&#x4EE3;&#x7801;&#x4E66;&#x5199;&#x89C4;&#x8303;&#xFF0C;&#x4E14;&#x4FE1;&#x4EFB;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF01;</p>
+</li>
+<li><p><code>useBuiltIns</code>&#x8BBE;&#x7F6E;&#x4E3A;<code>false</code>&#x6BD4;&#x8F83;&#x4E0D;&#x9519;&#x3002;<br>&#x5728;js&#x4EE3;&#x7801;&#x7B2C;&#x4E00;&#x884C;<code>import &apos;@babel/polyfill&apos;</code>&#xFF0C;&#x6216;&#x5728;webpack&#x7684;&#x5165;&#x53E3;entry&#x4E2D;&#x5199;&#x5165;&#x6A21;&#x5757;<code>@babel/polyfill</code>&#xFF0C;&#x4F1A;&#x5C06;@babel/polyfill&#x6574;&#x4E2A;&#x5305;&#x5168;&#x90E8;&#x5BFC;&#x5165;&#xFF1B;
+&#x6700;&#x5B89;&#x5168;&#xFF0C;&#x4F46;&#x6253;&#x5305;&#x4F53;&#x79EF;&#x4F1A;&#x5927;&#x4E00;&#x4E9B;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x9009;&#x7528;&#x3002;</p>
+</li>
+</ol>
+</li>
+<li><p>&#x9700;&#x8981;&#x5B89;&#x88C5;&#x7684;&#x5168;&#x90E8;&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre><code class="lang-js"> yarn add babel-loader @babel/core @babel/preset-env -D
+ yarn add @babel/polyfill
+</code></pre>
+</li>
+<li><p>.babelrc&#x914D;&#x7F6E;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-js"> {
+   <span class="hljs-string">&quot;presets&quot;</span>: [
+     [
+       <span class="hljs-string">&quot;@babel/preset-env&quot;</span>,
+       {
+         <span class="hljs-string">&quot;modules&quot;</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &#x63A8;&#x8350;</span>
+         <span class="hljs-string">&quot;useBuiltIns&quot;</span>: <span class="hljs-string">&quot;entry&quot;</span>, <span class="hljs-comment">// &#x63A8;&#x8350;</span>
+         <span class="hljs-string">&quot;corejs&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-comment">// &#x65B0;&#x7248;&#x672C;&#x7684;@babel/polyfill&#x5305;&#x542B;&#x4E86;core-js@2&#x548C;core-js@3&#x7248;&#x672C;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x58F0;&#x660E;&#x7248;&#x672C;&#xFF0C;&#x5426;&#x5219;webpack&#x8FD0;&#x884C;&#x65F6;&#x4F1A;&#x62A5;warning&#xFF0C;&#x6B64;&#x5904;&#x6682;&#x65F6;&#x4F7F;&#x7528;core-js@2&#x7248;&#x672C;&#xFF08;&#x672B;&#x5C3E;&#x4F1A;&#x9644;&#x4E0A;@core-js@3&#x600E;&#x4E48;&#x7528;&#xFF09;</span>
+       }
+     ]
+   ],
+   <span class="hljs-string">&quot;plugins&quot;</span>: []
+ }
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>&#x5982;&#x679C;&#x662F;&#x5F00;&#x53D1;&#x7B2C;&#x4E09;&#x65B9;&#x7C7B;&#x5E93;&#xFF1A; <code>@babel/preset-env + @babel/plugin-transform-runtime + @babel/runtime-corejs2</code>&#xFF08;&#x6216;&#x8005;&#xFF0C;&#x4E0D;&#x505A;&#x8F6C;&#x7801;&#x5904;&#x7406;&#xFF0C;&#x63D0;&#x9192;&#x4F7F;&#x7528;&#x8005;&#x81EA;&#x5DF1;&#x505A;&#x597D;&#x517C;&#x5BB9;&#x5904;&#x7406;&#x4E5F;&#x53EF;&#x4EE5;&#xFF09;&#x3002;</p>
+<ol>
+<li><p>&#x9700;&#x8981;&#x5B89;&#x88C5;&#x7684;&#x5168;&#x90E8;&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre><code class="lang-js"> yarn add babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime -D
+ yarn add @babel/runtime-corejs2
+</code></pre>
+</li>
+<li><p>.babelrc&#x914D;&#x7F6E;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-js"> {
+   <span class="hljs-string">&quot;presets&quot;</span>: [
+     [
+       <span class="hljs-string">&quot;@babel/preset-env&quot;</span>,
+       {
+         <span class="hljs-string">&quot;modules&quot;</span>: <span class="hljs-literal">false</span>,
+       }
+     ]
+   ],
+   <span class="hljs-string">&quot;plugins&quot;</span>: [
+     [
+       <span class="hljs-string">&quot;@babel/plugin-transform-runtime&quot;</span>,
+       {
+         <span class="hljs-string">&quot;corejs&quot;</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// &#x63A8;&#x8350;</span>
+       }
+     ]
+   ]
+ }
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="&#x53C2;&#x8003;&#x6587;&#x6863;"><a name="&#x53C2;&#x8003;&#x6587;&#x6863;" class="plugin-anchor" href="#&#x53C2;&#x8003;&#x6587;&#x6863;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;&#x6587;&#x6863;</h3>
+<ol>
+<li><a href="https://blog.csdn.net/weixin_34163741/article/details/88015827" target="_blank">babel polyfill &#x548C; runtime &#x6D45;&#x6790;</a></li>
+<li><a href="https://www.junorz.com/archives/689.html" target="_blank">Babel + Webpack &#x914D;&#x7F6E;&#x524D;&#x7AEF;&#x9879;&#x76EE;</a> </li>
+</ol>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">Last modified time&#xFF1A;
+2020-04-20 10:08:14
+</span></footer></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="transform-runtime.html" class="navigation navigation-prev " aria-label="Previous page: @babel/plugin-transform-runtime">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="proposal.html" class="navigation navigation-next " aria-label="Next page: 提案级别的插件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"polyfill方案的对比","level":"1.3.4","depth":2,"next":{"title":"提案级别的插件","level":"1.3.5","depth":2,"path":"content/babel/proposal.md","ref":"./content/babel/proposal.md","articles":[]},"previous":{"title":"@babel/plugin-transform-runtime","level":"1.3.3","depth":2,"path":"content/babel/transform-runtime.md","ref":"./content/babel/transform-runtime.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","github-buttons","simple-page-toc","ace","splitter","anchors","back-to-top-button","theme-vuejs-2","favicon","pageview-count","lightbox","tbfed-pagefooter","hide-element","code-optimize","search-pro-fixed"],"root":"./src","styles":{"website":"./assets/styles/website.css","ebook":"./assets/styles/ebook.css","pdf":"./assets/styles/pdf.css","mobi":"./assets/styles/mobile.css","epub":"./assets/styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"Last modified time：","modify_format":"YYYY-MM-DD HH:mm:ss"},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro-fixed":{},"theme-vuejs-2":{},"hide-element":{"elements":[".gitbook-link",".copyright"]},"fontsettings":{"theme":"white","family":"serif","size":2},"highlight":{},"favicon":{"shortcut":"./assets/images/favicon.ico","bookmark":"./assets/images/favicon.ico"},"lightbox":{"jquery":true},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Eleven90","repo":"webpack-template","type":"star","size":"small","count":true}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"code-optimize":{"copyButtons":true,"showLines":false},"anchors":{}},"theme":"default","author":"Eleven","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack-docs","language":"zh-hans","links":{"sidebar":{"Eleven":"https://github.com/Eleven90"}},"gitbook":"*"},"file":{"path":"content/babel/polyfill-or-runtime.md","mtime":"2020-04-20T02:08:14.582Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-04T04:03:45.900Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code-optimize/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

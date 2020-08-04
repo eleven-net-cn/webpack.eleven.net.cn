@@ -1,0 +1,775 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>常见性能优化 · webpack-docs</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Eleven">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code-optimize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro-fixed/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../assets/styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="patch-package.html" />
+    
+    
+    <link rel="prev" href="eslint.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Eleven90","repo":"webpack-template","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/Eleven90" target="_blank" class="custom-link">Eleven</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="entry.html">
+            
+                <a href="entry.html">
+            
+                    
+                    自动扫描入口js、HTML模版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="babel/">
+            
+                <a href="babel/">
+            
+                    
+                    Babel 7 转码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="babel/preset-env.html">
+            
+                <a href="babel/preset-env.html">
+            
+                    
+                    @babel/preset-env
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="babel/polyfill.html">
+            
+                <a href="babel/polyfill.html">
+            
+                    
+                    @babel/polyfill
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="babel/transform-runtime.html">
+            
+                <a href="babel/transform-runtime.html">
+            
+                    
+                    @babel/plugin-transform-runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="babel/polyfill-or-runtime.html">
+            
+                <a href="babel/polyfill-or-runtime.html">
+            
+                    
+                    polyfill方案的对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="babel/proposal.html">
+            
+                <a href="babel/proposal.html">
+            
+                    
+                    提案级别的插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="babel/decorators.html">
+            
+                <a href="babel/decorators.html">
+            
+                    
+                    装饰器语法支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="babel/import.html">
+            
+                <a href="babel/import.html">
+            
+                    
+                    动态导入支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="babel/corejs3.html">
+            
+                <a href="babel/corejs3.html">
+            
+                    
+                    corejs 3 的更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="style.html">
+            
+                <a href="style.html">
+            
+                    
+                    CSS样式的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="media.html">
+            
+                <a href="media.html">
+            
+                    
+                    图片、字体、多媒体等资源的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="dev-server.html">
+            
+                <a href="dev-server.html">
+            
+                    
+                    配置dev-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="alias.html">
+            
+                <a href="alias.html">
+            
+                    
+                    模块配置别名、扩展名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="provide.html">
+            
+                <a href="provide.html">
+            
+                    
+                    全局注入模块，省去到处导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="define.html">
+            
+                <a href="define.html">
+            
+                    
+                    注入应用的全局变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="module.html">
+            
+                <a href="module.html">
+            
+                    
+                    在 webpack 中引入未模块化的库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="prune.html">
+            
+                <a href="prune.html">
+            
+                    
+                    externals 打包时排除某些模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="library.html">
+            
+                <a href="library.html">
+            
+                    
+                    打包js库时的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="banner.html">
+            
+                <a href="banner.html">
+            
+                    
+                    在打包的文件头部添加 Banner 信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <a target="_blank" href="https://babeljs.io/docs/en/babel-plugin-transform-strict-mode">
+            
+                    
+                    移除严格模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="node-server.html">
+            
+                <a href="node-server.html">
+            
+                    
+                    配置 node express 服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="http-server.html">
+            
+                <a href="http-server.html">
+            
+                    
+                    配置 http-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="eslint.html">
+            
+                <a href="eslint.html">
+            
+                    
+                    集成eslint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.18" data-path="optimize.html">
+            
+                <a href="optimize.html">
+            
+                    
+                    常见性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="patch-package.html">
+            
+                <a href="patch-package.html">
+            
+                    
+                    自动修改 node_moduels 的包源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="circular.html">
+            
+                <a href="circular.html">
+            
+                    
+                    模块间循环引用问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="inline.html">
+            
+                <a href="inline.html">
+            
+                    
+                    内联 js/css 等资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="reference.html">
+            
+                <a href="reference.html">
+            
+                    
+                    参考文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >常见性能优化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h2 id="&#x5E38;&#x89C1;&#x6027;&#x80FD;&#x4F18;&#x5316;"><a name="&#x5E38;&#x89C1;&#x6027;&#x80FD;&#x4F18;&#x5316;" class="plugin-anchor" href="#&#x5E38;&#x89C1;&#x6027;&#x80FD;&#x4F18;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x89C1;&#x6027;&#x80FD;&#x4F18;&#x5316;</h2>
+<ol>
+<li><p><a href="https://github.com/stephencookdev/speed-measure-webpack-plugin" target="_blank">speed-measure-webpack-plugin</a> &#x5206;&#x6790; webpack &#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5404;&#x4E2A; plugin&#x3001;loader &#x7B49;&#x8017;&#x8D39;&#x7684;&#x65F6;&#x95F4;</p>
+<p> &#x793A;&#x4F8B;</p>
+<pre><code class="lang-js"> <span class="hljs-keyword">const</span> SpeedMeasurePlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;speed-measure-webpack-plugin&apos;</span>)
+ <span class="hljs-keyword">const</span> timestamp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;time-stamp&apos;</span>)
+
+ <span class="hljs-keyword">const</span> smp = <span class="hljs-keyword">new</span> SpeedMeasurePlugin({
+     <span class="hljs-comment">// &#x9ED8;&#x8BA4;&#x901A;&#x8FC7; console.log &#x5728;&#x7EC8;&#x7AEF;&#x76F4;&#x63A5;&#x8F93;&#x51FA;</span>
+     <span class="hljs-comment">// &#x5982;&#x679C;&#x914D;&#x7F6E;&#x6B64;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x5185;&#x5BB9;&#x8F93;&#x51FA;&#x5728;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#xFF08;&#x76EE;&#x5F55;&#x9700;&#x5148;&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x597D;&#xFF09;&#x4E0B;&#x7684;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#xFF08;&#x6587;&#x4EF6;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#xFF09;</span>
+     outputTarget: path.resolve(__dirname, <span class="hljs-string">`../log`</span>, <span class="hljs-string">`performance_<span class="hljs-subst">${timestamp(&apos;YYYYMMDD_HH:mm:ss&apos;)}</span>.log`</span>)
+ })
+ webpackConfig = smp.wrap(webpackConfig) <span class="hljs-comment">// webpackConfig &#x662F;&#x4F60;&#x539F;&#x5148;&#x7684; webpack &#x914D;&#x7F6E;</span>
+</code></pre>
+</li>
+<li><p><a href="https://github.com/webpackmonitor/webpackmonitor" target="_blank">webpack-monitor</a> &#x5206;&#x6790;&#x6253;&#x5305;&#x4EA7;&#x7269;&#x3002;</p>
+<p> &#x793A;&#x4F8B;</p>
+<pre><code class="lang-js"> <span class="hljs-keyword">const</span> WebpackMonitor = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack-monitor&apos;</span>)
+ <span class="hljs-keyword">const</span> timestamp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;time-stamp&apos;</span>)
+ <span class="hljs-keyword">const</span> { version } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../package&apos;</span>)
+
+ ...
+ plugins: [
+     <span class="hljs-comment">// http://webpackmonitor.com/</span>
+     <span class="hljs-keyword">new</span> WebpackMonitor({
+         target: <span class="hljs-string">`../monitor/stats_v<span class="hljs-subst">${version}</span>_<span class="hljs-subst">${timestamp(&apos;YYYYMMDD_HH:mm:ss&apos;)}</span>.json`</span>, <span class="hljs-comment">// &#x8F93;&#x51FA;&#x7684;JSON&#x7EDF;&#x8BA1;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF08;&#x76F8;&#x5BF9;&#x4E8E;&#x6784;&#x5EFA;&#x76EE;&#x5F55;&#xFF09;</span>
+         launch: <span class="hljs-literal">false</span>, <span class="hljs-comment">// &#x662F;&#x5426;&#x542F;&#x52A8;&#x5206;&#x6790;&#x9762;&#x677F;</span>
+         <span class="hljs-comment">// capture: true, // &#x5982;&#x679C;&#x5F53;&#x524D;&#x7248;&#x672C;&#x4E0E;&#x5148;&#x524D;&#x7248;&#x672C;&#x4E0D;&#x540C;&#xFF0C;&#x5219;&#x6355;&#x83B7;&#x5F53;&#x524D;&#x7248;&#x672C;&#x7684;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;</span>
+         <span class="hljs-comment">// port: 3030, // &#x542F;&#x52A8;&#x65F6;&#x4E3A;Webpack Monitor&#x4EEA;&#x8868;&#x677F;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x7684;&#x7AEF;&#x53E3;</span>
+     }),
+ ],
+ ...
+</code></pre>
+</li>
+<li><p><a href="https://www.npmjs.com/package/webpack-bundle-analyzer" target="_blank">webpack-bundle-analyzer</a> &#x5206;&#x6790;&#x6253;&#x5305;&#x4EA7;&#x7269;</p>
+<p> &#x793A;&#x4F8B;</p>
+<pre><code class="lang-js"> <span class="hljs-keyword">const</span> { BundleAnalyzerPlugin } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack-bundle-analyzer&apos;</span>)
+
+ ...
+ plugins: [
+     <span class="hljs-comment">// https://www.npmjs.com/package/webpack-bundle-analyzer</span>
+     <span class="hljs-comment">// &#x6F14;&#x793A;&#x76F4;&#x63A5;&#x8F93;&#x51FA; html &#x6587;&#x4EF6;&#x5F62;&#x5F0F;</span>
+     <span class="hljs-keyword">new</span> BundleAnalyzerPlugin({
+         analyzerMode: <span class="hljs-string">&apos;static&apos;</span>, <span class="hljs-comment">// html &#x6587;&#x4EF6;&#x65B9;&#x5F0F;&#x8F93;&#x51FA;&#x7F16;&#x8BD1;&#x5206;&#x6790;</span>
+         openAnalyzer: <span class="hljs-literal">false</span>,
+         reportFilename: path.resolve(__dirname, <span class="hljs-string">&apos;..&apos;</span>, <span class="hljs-string">`analyzer/index.html`</span>),
+     }),
+ ]
+ ...
+</code></pre>
+</li>
+<li><p>&#x4F7F;&#x7528;happypack&#x6765;&#x4F18;&#x5316;&#xFF0C;&#x591A;&#x8FDB;&#x7A0B;&#x8FD0;&#x884C;&#x7F16;&#x8BD1;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF1A;</p>
+<ol>
+<li><a href="https://www.jianshu.com/p/b9bf995f3712" target="_blank">webpack &#x4F18;&#x5316;&#x4E4B; HappyPack &#x5B9E;&#x6218;</a></li>
+<li><a href="https://yq.aliyun.com/articles/67269" target="_blank">happypack &#x539F;&#x7406;&#x89E3;&#x6790;</a></li>
+</ol>
+</li>
+<li><p>&#x4F7F;&#x7528;<a href="https://www.webpackjs.com/loaders/cache-loader/" target="_blank">cache-loader</a>&#x7F13;&#x5B58;&#x7F16;&#x8BD1;&#x7ED3;&#x679C;</p>
+</li>
+<li><p><a href="https://segmentfault.com/a/1190000015489489" target="_blank">DllPlugin</a>&#x62C6;&#x5206;&#x57FA;&#x7840;&#x5305; </p>
+</li>
+</ol>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">Last modified time&#xFF1A;
+2020-06-22 16:39:31
+</span></footer></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="eslint.html" class="navigation navigation-prev " aria-label="Previous page: 集成eslint">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="patch-package.html" class="navigation navigation-next " aria-label="Next page: 自动修改 node_moduels 的包源码">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"常见性能优化","level":"1.18","depth":1,"next":{"title":"自动修改 node_moduels 的包源码","level":"1.19","depth":1,"path":"content/patch-package.md","ref":"./content/patch-package.md","articles":[]},"previous":{"title":"集成eslint","level":"1.17","depth":1,"path":"content/eslint.md","ref":"./content/eslint.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","github-buttons","simple-page-toc","ace","splitter","anchors","back-to-top-button","theme-vuejs-2","favicon","pageview-count","lightbox","tbfed-pagefooter","hide-element","code-optimize","search-pro-fixed"],"root":"./src","styles":{"website":"./assets/styles/website.css","ebook":"./assets/styles/ebook.css","pdf":"./assets/styles/pdf.css","mobi":"./assets/styles/mobile.css","epub":"./assets/styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"Last modified time：","modify_format":"YYYY-MM-DD HH:mm:ss"},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro-fixed":{},"theme-vuejs-2":{},"hide-element":{"elements":[".gitbook-link",".copyright"]},"fontsettings":{"theme":"white","family":"serif","size":2},"highlight":{},"favicon":{"shortcut":"./assets/images/favicon.ico","bookmark":"./assets/images/favicon.ico"},"lightbox":{"jquery":true},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Eleven90","repo":"webpack-template","type":"star","size":"small","count":true}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"code-optimize":{"copyButtons":true,"showLines":false},"anchors":{}},"theme":"default","author":"Eleven","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack-docs","language":"zh-hans","links":{"sidebar":{"Eleven":"https://github.com/Eleven90"}},"gitbook":"*"},"file":{"path":"content/optimize.md","mtime":"2020-06-22T08:39:31.010Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-04T04:03:45.900Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code-optimize/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

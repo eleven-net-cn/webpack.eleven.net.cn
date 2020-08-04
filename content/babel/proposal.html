@@ -1,0 +1,751 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>提案级别的插件 · webpack-docs</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Eleven">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code-optimize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro-fixed/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../assets/styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="decorators.html" />
+    
+    
+    <link rel="prev" href="polyfill-or-runtime.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Eleven90","repo":"webpack-template","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/Eleven90" target="_blank" class="custom-link">Eleven</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../entry.html">
+            
+                <a href="../entry.html">
+            
+                    
+                    自动扫描入口js、HTML模版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Babel 7 转码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="preset-env.html">
+            
+                <a href="preset-env.html">
+            
+                    
+                    @babel/preset-env
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="polyfill.html">
+            
+                <a href="polyfill.html">
+            
+                    
+                    @babel/polyfill
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="transform-runtime.html">
+            
+                <a href="transform-runtime.html">
+            
+                    
+                    @babel/plugin-transform-runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="polyfill-or-runtime.html">
+            
+                <a href="polyfill-or-runtime.html">
+            
+                    
+                    polyfill方案的对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="proposal.html">
+            
+                <a href="proposal.html">
+            
+                    
+                    提案级别的插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="decorators.html">
+            
+                <a href="decorators.html">
+            
+                    
+                    装饰器语法支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="import.html">
+            
+                <a href="import.html">
+            
+                    
+                    动态导入支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="corejs3.html">
+            
+                <a href="corejs3.html">
+            
+                    
+                    corejs 3 的更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../style.html">
+            
+                <a href="../style.html">
+            
+                    
+                    CSS样式的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../media.html">
+            
+                <a href="../media.html">
+            
+                    
+                    图片、字体、多媒体等资源的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../dev-server.html">
+            
+                <a href="../dev-server.html">
+            
+                    
+                    配置dev-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../alias.html">
+            
+                <a href="../alias.html">
+            
+                    
+                    模块配置别名、扩展名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../provide.html">
+            
+                <a href="../provide.html">
+            
+                    
+                    全局注入模块，省去到处导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../define.html">
+            
+                <a href="../define.html">
+            
+                    
+                    注入应用的全局变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../module.html">
+            
+                <a href="../module.html">
+            
+                    
+                    在 webpack 中引入未模块化的库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../prune.html">
+            
+                <a href="../prune.html">
+            
+                    
+                    externals 打包时排除某些模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../library.html">
+            
+                <a href="../library.html">
+            
+                    
+                    打包js库时的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../banner.html">
+            
+                <a href="../banner.html">
+            
+                    
+                    在打包的文件头部添加 Banner 信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <a target="_blank" href="https://babeljs.io/docs/en/babel-plugin-transform-strict-mode">
+            
+                    
+                    移除严格模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../node-server.html">
+            
+                <a href="../node-server.html">
+            
+                    
+                    配置 node express 服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../http-server.html">
+            
+                <a href="../http-server.html">
+            
+                    
+                    配置 http-server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../eslint.html">
+            
+                <a href="../eslint.html">
+            
+                    
+                    集成eslint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../optimize.html">
+            
+                <a href="../optimize.html">
+            
+                    
+                    常见性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../patch-package.html">
+            
+                <a href="../patch-package.html">
+            
+                    
+                    自动修改 node_moduels 的包源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../circular.html">
+            
+                <a href="../circular.html">
+            
+                    
+                    模块间循环引用问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../inline.html">
+            
+                <a href="../inline.html">
+            
+                    
+                    内联 js/css 等资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../reference.html">
+            
+                <a href="../reference.html">
+            
+                    
+                    参考文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >提案级别的插件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><ol>
+<li><p>babel &#x5B98;&#x65B9;&#x8BA4;&#x4E3A;&#xFF0C;&#x628A;&#x4E0D;&#x7A33;&#x5B9A;&#x7684; stage0-3 &#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x9884;&#x8BBE;&#x662F;&#x4E0D;&#x592A;&#x5408;&#x7406;&#x7684;&#xFF0C;<code>@babel/preset-env</code>&#x3001;<code>@babel/polyfill</code>&#x7B49;&#x53EA;&#x652F;&#x6301;&#x5230;<code>stage-4</code>&#x7EA7;&#x522B;&#xFF0C;&#x56E0;&#x6B64; babel &#x65B0;&#x7248;&#x672C;&#x5E9F;&#x5F03;&#x4E86; stage &#x9884;&#x8BBE;&#xFF0C;&#x8F6C;&#x800C;&#x8BA9;&#x7528;&#x6237;&#x81EA;&#x5DF1;&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x54EA;&#x4E2A; proposal &#x7279;&#x6027;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x8FD9;&#x5C06;&#x5E26;&#x6765;&#x66F4;&#x591A;&#x7684;&#x660E;&#x786E;&#x6027;&#xFF08;&#x7528;&#x6237;&#x65E0;&#x987B;&#x7406;&#x89E3; stage&#xFF0C;&#x81EA;&#x5DF1;&#x9009;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x81EA;&#x5DF1;&#x4FBF;&#x80FD;&#x660E;&#x786E;&#x7684;&#x77E5;&#x9053;&#x4EE3;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x54EA;&#x4E2A;&#x7279;&#x6027;&#xFF09;&#x3002;  </p>
+</li>
+<li><p>&#x6240;&#x6709;&#x5EFA;&#x8BAE;&#x7279;&#x6027;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x90FD;&#x6539;&#x53D8;&#x4E86;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF0C;&#x5373;&#x7C7B;&#x4F3C; <code>@babel/plugin-proposal-function-bind</code> &#x8FD9;&#x6837;&#x7684;&#x547D;&#x540D;&#x65B9;&#x5F0F;&#x6765;&#x8868;&#x660E;&#x8FD9;&#x662F;&#x4E2A; proposal &#x9636;&#x6BB5;&#x7279;&#x6027;&#x3002;  </p>
+</li>
+<li><p>&#x6240;&#x4EE5;&#xFF0C;&#x5904;&#x4E8E;&#x5EFA;&#x8BAE;&#x9636;&#x6BB5;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x57FA;&#x672C;&#x90FD;&#x5DF2;&#x4ECE;<code>@babel/preset-env</code>&#x3001;<code>@babel/polyfill</code>&#x7B49;&#x5305;&#x4E2D;&#x88AB;&#x79FB;&#x9664;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x53BB;&#x53E6;&#x5916;&#x5B89;&#x88C5;&#x5BF9;&#x5E94;&#x7684; preset&#x3001;plugin&#xFF0C;&#xFF08;&#x4E00;&#x822C;&#x4F60;&#x80FD;&#x627E;&#x5230;&#x7684;&#x540D;&#x79F0;&#x91CC;&#x6709; proposal &#x5B57;&#x6837;&#x7684;&#x5305;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x5728;<code>@babel/preset-env</code>&#x3001;<code>@babel/plugin-transform-runtime</code>&#x4EE5;&#x5916;&#x505A;&#x914D;&#x7F6E;&#xFF09;&#x3002;  </p>
+</li>
+<li><p>&#x5404;&#x4E2A;&#x7EA7;&#x522B;&#x5F53;&#x524D;&#x53EF;&#x4EE5;&#x9009;&#x7528;&#x7684; proposal &#x63D2;&#x4EF6;&#x5927;&#x6982;&#x5982;&#x4E0B;&#xFF08;<a href="https://github.com/babel/babel/blob/master/packages/babel-preset-stage-0/README.md" target="_blank">&#x4F20;&#x9001;&#x95E8;</a>&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-js"> {
+     <span class="hljs-string">&quot;plugins&quot;</span>: [
+     <span class="hljs-comment">// Stage 0</span>
+     <span class="hljs-string">&quot;@babel/plugin-proposal-function-bind&quot;</span>,
+
+     <span class="hljs-comment">// Stage 1</span>
+     <span class="hljs-string">&quot;@babel/plugin-proposal-export-default-from&quot;</span>,
+     <span class="hljs-string">&quot;@babel/plugin-proposal-logical-assignment-operators&quot;</span>,
+     [<span class="hljs-string">&quot;@babel/plugin-proposal-optional-chaining&quot;</span>, { <span class="hljs-string">&quot;loose&quot;</span>: <span class="hljs-literal">false</span> }],
+     [<span class="hljs-string">&quot;@babel/plugin-proposal-pipeline-operator&quot;</span>, { <span class="hljs-string">&quot;proposal&quot;</span>: <span class="hljs-string">&quot;minimal&quot;</span> }],
+     [<span class="hljs-string">&quot;@babel/plugin-proposal-nullish-coalescing-operator&quot;</span>, { <span class="hljs-string">&quot;loose&quot;</span>: <span class="hljs-literal">false</span> }],
+     <span class="hljs-string">&quot;@babel/plugin-proposal-do-expressions&quot;</span>,
+
+     <span class="hljs-comment">// Stage 2</span>
+     [<span class="hljs-string">&quot;@babel/plugin-proposal-decorators&quot;</span>, { <span class="hljs-string">&quot;legacy&quot;</span>: <span class="hljs-literal">true</span> }],
+     <span class="hljs-string">&quot;@babel/plugin-proposal-function-sent&quot;</span>,
+     <span class="hljs-string">&quot;@babel/plugin-proposal-export-namespace-from&quot;</span>,
+     <span class="hljs-string">&quot;@babel/plugin-proposal-numeric-separator&quot;</span>,
+     <span class="hljs-string">&quot;@babel/plugin-proposal-throw-expressions&quot;</span>,
+
+     <span class="hljs-comment">// Stage 3</span>
+     <span class="hljs-string">&quot;@babel/plugin-syntax-dynamic-import&quot;</span>,
+     <span class="hljs-string">&quot;@babel/plugin-syntax-import-meta&quot;</span>,
+     [<span class="hljs-string">&quot;@babel/plugin-proposal-class-properties&quot;</span>, { <span class="hljs-string">&quot;loose&quot;</span>: <span class="hljs-literal">false</span> }],
+     <span class="hljs-string">&quot;@babel/plugin-proposal-json-strings&quot;</span>
+   ]
+ }
+</code></pre>
+</li>
+</ol>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">Last modified time&#xFF1A;
+2019-10-16 11:21:31
+</span></footer></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="polyfill-or-runtime.html" class="navigation navigation-prev " aria-label="Previous page: polyfill方案的对比">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="decorators.html" class="navigation navigation-next " aria-label="Next page: 装饰器语法支持">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"提案级别的插件","level":"1.3.5","depth":2,"next":{"title":"装饰器语法支持","level":"1.3.6","depth":2,"path":"content/babel/decorators.md","ref":"./content/babel/decorators.md","articles":[]},"previous":{"title":"polyfill方案的对比","level":"1.3.4","depth":2,"path":"content/babel/polyfill-or-runtime.md","ref":"./content/babel/polyfill-or-runtime.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-lunr","-search","github-buttons","simple-page-toc","ace","splitter","anchors","back-to-top-button","theme-vuejs-2","favicon","pageview-count","lightbox","tbfed-pagefooter","hide-element","code-optimize","search-pro-fixed"],"root":"./src","styles":{"website":"./assets/styles/website.css","ebook":"./assets/styles/ebook.css","pdf":"./assets/styles/pdf.css","mobi":"./assets/styles/mobile.css","epub":"./assets/styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"Last modified time：","modify_format":"YYYY-MM-DD HH:mm:ss"},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro-fixed":{},"theme-vuejs-2":{},"hide-element":{"elements":[".gitbook-link",".copyright"]},"fontsettings":{"theme":"white","family":"serif","size":2},"highlight":{},"favicon":{"shortcut":"./assets/images/favicon.ico","bookmark":"./assets/images/favicon.ico"},"lightbox":{"jquery":true},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Eleven90","repo":"webpack-template","type":"star","size":"small","count":true}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"code-optimize":{"copyButtons":true,"showLines":false},"anchors":{}},"theme":"default","author":"Eleven","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack-docs","language":"zh-hans","links":{"sidebar":{"Eleven":"https://github.com/Eleven90"}},"gitbook":"*"},"file":{"path":"content/babel/proposal.md","mtime":"2019-10-16T03:21:31.869Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-04T04:03:45.900Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code-optimize/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
