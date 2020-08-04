@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@e.coding.net:Eleven2016/webpack-docs.git"
+    "url": "git@github.com:Eleven90/webpack.eleven.net.cn.git"
   },
   "keywords": [
     "webpack"
