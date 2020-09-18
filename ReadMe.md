@@ -10,7 +10,7 @@ gitbook install // install gitbook plugins
 Command
 
 ```js
-yarn dev // development the book
+yarn start // development the book
 yarn build // build the book
 yarn release // publish book on gh-pages
 ```

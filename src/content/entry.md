@@ -166,4 +166,4 @@
     ...
     ```
 
-6. 完整的 [utils.js](https://github.com/Eleven90/webpack-template/blob/master/build/utils.js)
+6. 完整的 [utils.js](https://github.com/eleven-net-cn/webpack-template/blob/master/build/utils.js)

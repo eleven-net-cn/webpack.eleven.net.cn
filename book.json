@@ -4,7 +4,7 @@
   "author" : "Eleven",
   "links" : {
     "sidebar" : {
-        "Eleven" : "https://github.com/Eleven90"
+        "Eleven" : "https://github.com/eleven-net-cn"
     }
   },
   "language" : "zh-hans",
@@ -37,7 +37,7 @@
   "pluginsConfig": {
     "github-buttons": {
       "buttons": [{
-        "user": "Eleven90",
+        "user": "eleven-net-cn",
         "repo": "webpack-template",
         "type": "star",
         "size": "small",

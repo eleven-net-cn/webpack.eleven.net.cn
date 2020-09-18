@@ -4,13 +4,13 @@
   "description": "webpack 搭建备忘录",
   "main": "index.js",
   "scripts": {
-    "dev": "gitbook serve",
+    "start": "gitbook serve",
     "build": "gitbook build && cp ./CNAME _book/",
     "release": "yarn build && gh-pages -d _book"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Eleven90/webpack.eleven.net.cn.git"
+    "url": "git@github.com:eleven-net-cn/webpack.eleven.net.cn.git"
   },
   "keywords": [
     "webpack"
