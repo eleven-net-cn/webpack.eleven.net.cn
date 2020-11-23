@@ -120,6 +120,10 @@ raw-loader 默认生成使用 ES 模块语法的 JS 模块，需要注意一下�
 
 参考文档：[webpack使用raw-loader内联静态资源失效](https://blog.csdn.net/weixin_43711917/article/details/105748406)
 
+### [inline-source](https://github.com/popeindustries/inline-source)
+
+「暂时没有时间测试，做个记录先。」
+
 
 ### 总结
 
