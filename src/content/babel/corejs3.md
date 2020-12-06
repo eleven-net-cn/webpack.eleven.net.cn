@@ -27,6 +27,7 @@
                 // https://github.com/zloirock/core-js/blob/master/docs/2019-03-19-core-js-3-babel-and-a-look-into-the-future.md
                 "corejs": {
                   "version": 3, // 使用core-js@3
+                  // Babel 7.4 supports injecting proposals polyfills. By default, @babel/preset-env does not inject them, but you can opt-in using the proposals flag: corejs: { version: 3, proposals: true }.
                   "proposals": true,
                 }
               }
@@ -69,6 +70,7 @@
               {
                 "corejs": {
                   "version": 3,
+                  // Another notable change is the support of ECMAScript proposals. By default, @babel/plugin-transform-runtime does not inject polyfills for proposals and use entry points which do not include them but, exactly as you can do in @babel/preset-env, you can set the proposals flag to enable them: corejs: { version: 3, proposals: true }.
                   "proposals": true
                 },
                 "useESModules": true
