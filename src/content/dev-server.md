@@ -117,3 +117,11 @@
           compress: true,
         }
         ```
+
+    5. 本地开发调试的时候，也许你还想要开启允许跨域：
+
+        ```js
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+        ```
