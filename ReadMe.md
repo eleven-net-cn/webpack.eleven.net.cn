@@ -7,7 +7,7 @@ yarn // install packages by yarn, don't use npm
 gitbook install // install gitbook plugins
 ```
 
-Command
+## Command
 
 ```js
 yarn start // development the book
