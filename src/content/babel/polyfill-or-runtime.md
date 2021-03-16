@@ -186,7 +186,13 @@ core-js(v2)这个库有两个核心的文件夹，分别是 library 和 modules�
             }
             ```
 
-    2. 如果是开发第三方类库： `@babel/preset-env + @babel/plugin-transform-runtime + @babel/runtime-corejs2`（或者，不做转码处理，提醒使用者自己做好兼容处理也可以）。
+    2. 如果是开发第三方类库： `@babel/preset-env + @babel/plugin-transform-runtime + @babel/runtime-corejs2`。
+
+        另外，要注意自己使用的第三方依赖包，它们自身也可能存在兼容问题，如果有问题，一般在测试浏览器兼容问题时即可发现，这时，需要你手动从 [core-js](https://github.com/zloirock/core-js) 引入需要的 polyfill。
+
+         因为，通常打包编译时，是不会处理 node_modules 目录的。
+
+        「或者，不处理 polyfill 的问题，提醒使用者自己按照 preset-env 的方式做好兼容处理也可以，某些第三方库就是这么做的。」
 
         1. 需要安装的全部依赖：
 
