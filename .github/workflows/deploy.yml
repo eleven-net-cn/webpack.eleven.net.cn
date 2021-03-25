@@ -40,6 +40,7 @@ jobs:
         run: |
           yarn
           yarn global add gitbook-cli -D
+          gitbook -V
           gitbook install
           yarn build
 
