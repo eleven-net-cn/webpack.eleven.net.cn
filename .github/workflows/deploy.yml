@@ -39,8 +39,7 @@ jobs:
       - name: Build
         run: |
           yarn
-          yarn global add gitbook-cli -D
-          gitbook -V
+          npm -g install gitbook-cli
           gitbook install
           yarn build
 
