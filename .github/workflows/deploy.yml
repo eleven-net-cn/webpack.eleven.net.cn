@@ -39,7 +39,7 @@ jobs:
       - name: Build
         run: |
           yarn
-          yarn add gitbook-cli -D
+          yarn global add gitbook-cli -D
           gitbook install
           yarn build
 
