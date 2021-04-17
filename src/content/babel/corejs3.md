@@ -90,3 +90,9 @@
    ```js
    import 'core-js/shim'; // included < Stage 4 proposals
    ```
+
+## 推荐
+
+1. 这一篇对 Babel 的解读非常到位，强烈推荐。
+
+    https://mp.weixin.qq.com/s/B8XRsMg2uJrQTD5IFWOdlw
