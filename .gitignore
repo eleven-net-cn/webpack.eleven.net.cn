@@ -15,4 +15,4 @@ yarn-error.log*
 # eslint cache
 .eslintcache
 
-.vscode
+.replit

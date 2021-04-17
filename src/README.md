@@ -7,8 +7,3 @@
 ```js
 webpack 4 + babel 7
 ```
-
-## Yarn 和 NPM 的选择？
-
-1. 项目使用 Yarn，相对于 NPM：速度快、可离线安装、锁定版本、扁平化等更多优点。
-2. 如果需要从 npm 切换到 yarn，或者从 yarn 切换到 npm，请整体移除`node_modules`目录，及 yarn.lock/package-lock.json 文件，因 yarn 和 npm 两者的策略不同，导致相同的`package.json`列表安装后的`node_modules`结构是不同的（虽然这并不会引发 bug，但建议在切换时清除后重新`install`）。
