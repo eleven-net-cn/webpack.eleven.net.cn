@@ -33,7 +33,6 @@
     "hide-element",
     "code-optimize",
     "search-pro-fixed",
-    "valine",
     "mygitalk"
   ],
   "pluginsConfig": {
@@ -68,17 +67,13 @@
     "code-optimize": {
       "showLines": false
     },
-    "valine": {
-      "appId": "hkm8dtO9l1LGafjtOfx8tvBd",
-      "appKey": "UOfcRu89reXtwqeIXPzpMYMj"
-    },
     "mygitalk": {
       "clientID": "2f7463c94730f4b6aebc",
       "clientSecret": "c183974bbbaad88fbc07acf2868f9be06d652975",
       "repo": "webpack.eleven.net.cn",
       "owner": "eleven-net-cn",
       "admin": ["eleven-net-cn"],
-      "distractionFreeMode": true,
+      "distractionFreeMode": false,
       "proxy": "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"
     }
   }
