@@ -32,7 +32,8 @@
     "tbfed-pagefooter",
     "hide-element",
     "code-optimize",
-    "search-pro-fixed"
+    "search-pro-fixed",
+    "valine"
   ],
   "pluginsConfig": {
     "github-buttons": {
@@ -65,6 +66,10 @@
     },
     "code-optimize": {
       "showLines": false
+    },
+    "valine": {
+      "appId": "hkm8dtO9l1LGafjtOfx8tvBd",
+      "appKey": "UOfcRu89reXtwqeIXPzpMYMj"
     }
   }
 }
