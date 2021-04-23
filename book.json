@@ -1,6 +1,6 @@
 {
   "root": "./src",
-  "title": "Webpack 最佳实践",
+  "title": "webpack-docs",
   "author" : "Eleven",
   "links" : {
     "sidebar" : {
