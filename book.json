@@ -3,9 +3,7 @@
   "title": "webpack-docs",
   "author" : "Eleven",
   "links" : {
-    "sidebar" : {
-        "Eleven" : "https://github.com/eleven-net-cn"
-    }
+    "sidebar" : {}
   },
   "language" : "zh-hans",
   "styles": {
