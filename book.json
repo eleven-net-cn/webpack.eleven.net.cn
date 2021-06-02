@@ -2,6 +2,11 @@
   "root": "./src",
   "title": "webpack-docs",
   "author" : "Eleven",
+  "links" : {
+    "sidebar" : {
+        "Eleven" : "https://github.com/eleven-net-cn"
+    }
+  },
   "language" : "zh-hans",
   "styles": {
     "website": "./assets/styles/website.css",
