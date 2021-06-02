@@ -2,9 +2,6 @@
   "root": "./src",
   "title": "webpack-docs",
   "author" : "Eleven",
-  "links" : {
-    "sidebar" : {}
-  },
   "language" : "zh-hans",
   "styles": {
     "website": "./assets/styles/website.css",
