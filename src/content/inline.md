@@ -124,6 +124,13 @@ raw-loader 默认生成使用 ES 模块语法的 JS 模块，需要注意一下�
 
 「暂时没有时间测试，做个记录先。」
 
+### [html-webpack-injector](https://github.com/architgarg/html-webpack-injector)
+
+「暂时没有时间测试，做个记录先。」
+
+### [html-webpack-tags-plugin](https://github.com/jharris4/html-webpack-tags-plugin)
+
+「暂时没有时间测试，做个记录先。」
 
 ### 总结
 
