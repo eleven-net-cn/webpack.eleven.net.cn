@@ -146,7 +146,7 @@ core-js(v2)这个库有两个核心的文件夹，分别是 library 和 modules�
     6. 从上面这个例子可以看出，对于Promise这个api，@babel/polyfill引用了core-js/modules中的es6.promise.js文件，因为是对全局变量进行处理，所以赋值语句不用做处理；@babel/runtime-corejs2会生成一个局部变量_promise，然后把Promise都替换成_promise，这样就不会污染全局变量了。
 
 4. **综合上面的分析，得出结论：**
-    1. 如果是自己的应用： `@babel/preset-env + @babel/polyfill`
+    1. 如果是自己的应用： `@babel/preset-env + @babel/polyfill + @babel/runtime`
         1. 根据useBuiltIns参数确定如何使用@babel/polyfill，具体参数设置总结如下：
             1. `useBuiltIns`设置为`entry`比较不错，推荐使用。  
               在js代码第一行`import '@babel/polyfill'`，或在webpack的入口entry中写入模块`@babel/polyfill`，会将browserslist环境不支持的所有垫片都导入；
@@ -165,7 +165,7 @@ core-js(v2)这个库有两个核心的文件夹，分别是 library 和 modules�
 
             ```js
             yarn add babel-loader @babel/core @babel/preset-env -D
-            yarn add @babel/polyfill
+            yarn add @babel/polyfill @babel/runtime
             ```
 
         3. .babelrc配置文件
@@ -182,7 +182,14 @@ core-js(v2)这个库有两个核心的文件夹，分别是 library 和 modules�
                   }
                 ]
               ],
-              "plugins": []
+              "plugins": [
+                [
+                  "@babel/plugin-transform-runtime",
+                  {
+                    "corejs": false // 解决 helper 函数重复引入
+                  }
+                ]
+              ]
             }
             ```
 

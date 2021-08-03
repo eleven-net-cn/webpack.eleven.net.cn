@@ -12,7 +12,7 @@
 
       ```sh
       yarn add babel-loader @babel/core @babel/preset-env -D
-      yarn add core-js regenerator-runtime
+      yarn add core-js regenerator-runtime @babel/runtime
       ```
 
    2. .babelrc 配置
@@ -35,7 +35,14 @@
             }
           ]
         ],
-        "plugins": []
+        "plugins": [
+          [
+            "@babel/plugin-transform-runtime",
+            {
+              "corejs": false // 解决 helper 函数重复引入
+            }
+          ]
+        ]
       }
       ```
 
