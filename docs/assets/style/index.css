@@ -1,0 +1,84 @@
+/* coverpage */
+.cover {
+  /* background: linear-gradient(to left bottom, hsl(110, 100%, 85%) 0%,hsl(228, 100%, 85%) 100%)!important; */
+}
+
+.cover .cover-main p {
+  line-height: 1.5;
+}
+
+.cover-main > ul > li > a:hover {
+  color: #27ae60;
+}
+
+/* logo */
+.cover-logo {
+  position: absolute;
+  top: 28px;
+  left: 25px;
+}
+
+.cover-logo > img {
+  width: 232px;
+}
+
+@media screen and (max-width: 768px) {
+  .cover-logo {
+    top: 20px;
+  }
+}
+
+/* sidbar logo */
+.sidebar .app-name-link img {
+  height: 26px;
+}
+
+.sidebar .sidebar-nav > ul > li > a {
+  font-weight: bold;
+}
+
+/* back top */
+.scroll-to-top {
+  width: 50px !important;
+  height: 50px !important;
+  line-height: 50px !important;
+  font-size: 14px !important;
+  font-weight: bold;
+  font-family: fantasy;
+  border-radius: 50% !important;
+  border: 1px solid rgb(225, 225, 225) !important;
+  box-shadow: rgb(221, 221, 221) 0px 0px 10px 2px !important;
+  background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.scroll-to-top:hover {
+  background-color: #edfbf3 !important;
+  color: #27ae60 !important;
+}
+
+.scroll-to-top:active {
+  font-size: 15px !important;
+}
+
+/* picture zoom */
+.medium-zoom-overlay {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+}
+
+@media screen and (max-width: 800px) {
+  .app-nav > ul > li:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app-nav > ul > li:not(:nth-child(1)) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .app-nav {
+    display: none;
+  }
+}

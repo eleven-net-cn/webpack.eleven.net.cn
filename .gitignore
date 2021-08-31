@@ -16,3 +16,5 @@ yarn-error.log*
 .eslintcache
 
 .replit
+
+package-lock.json
