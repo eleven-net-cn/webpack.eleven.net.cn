@@ -4,6 +4,7 @@ window.$docsify = {
   el: '#app',
   name: 'webpack.eleven.net.cn',
   repo: 'true',
+  // routerMode: 'history',
   corner: {
     url: 'https://github.com/eleven-net-cn/webpack.eleven.net.cn',
     icon: 'github',
