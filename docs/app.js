@@ -1,5 +1,16 @@
 'use strict';
 
+var gitalkConfig = {
+  clientID: '2f7463c94730f4b6aebc',
+  clientSecret: 'c183974bbbaad88fbc07acf2868f9be06d652975',
+  repo: 'webpack.eleven.net.cn',
+  owner: 'eleven-net-cn',
+  admin: ['eleven-net-cn'],
+  id: window.md5(window.location.href),
+  distractionFreeMode: false,
+  proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
+};
+
 window.$docsify = {
   el: '#app',
   name: 'webpack.eleven.net.cn',
@@ -66,9 +77,34 @@ window.$docsify = {
       null,
       '📝&nbsp;编辑',
     ),
-    function (hook, vm) {},
+    function (hook, vm) {
+      hook.doneEach(function () {
+        // 确保 SPA 每一页都能正常初始化 gitalk
+        initGitalk(vm);
+      });
+    },
   ],
 };
+
+function initGitalk(vm) {
+  var label, domObj, main, divEle, gitalk;
+
+  label = vm.route.path.split('/').pop();
+  domObj = Docsify.dom;
+  main = domObj.getNode('#main');
+
+  Array.apply(null, document.querySelectorAll('div.gitalk-container')).forEach(function (ele) {
+    ele.remove();
+  });
+
+  divEle = domObj.create('div');
+  divEle.id = 'gitalk-container-' + label;
+  divEle.className = 'gitalk-container';
+  divEle.style = 'width: ' + main.clientWidth + 'px; margin: 0 auto 20px;padding-bottom: 40px;';
+  domObj.appendTo(domObj.find('.content'), divEle);
+  gitalk = new window.Gitalk(Object.assign(gitalkConfig, { id: !label ? 'home' : label }));
+  gitalk.render('gitalk-container-' + label);
+}
 
 // PWA
 // typeof navigator.serviceWorker !== 'undefined' &&
