@@ -27,7 +27,7 @@ window.$docsify = {
     successText: '已复制',
   },
   // footer: {
-  //     copy: '<span>&copy; www.eleven.com</span>',
+  //     copy: '<span>&copy; webpack.eleven.net.cn</span>',
   //     auth: 'lnc.ALL Rights Reserved',
   //     pre: '<hr/>',
   //     style:
@@ -54,6 +54,12 @@ window.$docsify = {
     bottom: 30,
     offset: 500,
   },
+  // count:{
+  //   countable:true,
+  //   fontsize:'0.9em',
+  //   color:'rgb(90,90,90)',
+  //   language:'chinese'
+  // },
   plugins: [
     window.EditOnGithubPlugin.create(
       'https://github.com/eleven-net-cn/webpack.eleven.net.cn/edit/main/docs/',
