@@ -6,7 +6,6 @@ var gitalkConfig = {
   repo: 'webpack.eleven.net.cn',
   owner: 'eleven-net-cn',
   admin: ['eleven-net-cn'],
-  id: window.md5(window.location.href),
   distractionFreeMode: false,
   proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
 };
@@ -97,12 +96,13 @@ function initGitalk(vm) {
     ele.remove();
   });
 
+  gitalkConfig.id = window.md5(window.location.href);
   divEle = domObj.create('div');
   divEle.id = 'gitalk-container-' + label;
   divEle.className = 'gitalk-container';
   divEle.style = 'width: ' + main.clientWidth + 'px; margin: 0 auto 20px;padding-bottom: 40px;';
   domObj.appendTo(domObj.find('.content'), divEle);
-  gitalk = new window.Gitalk(Object.assign(gitalkConfig, { id: !label ? 'home' : label }));
+  gitalk = new window.Gitalk(gitalkConfig);
   gitalk.render('gitalk-container-' + label);
 }
 
