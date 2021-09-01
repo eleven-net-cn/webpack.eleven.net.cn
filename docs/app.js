@@ -86,24 +86,26 @@ window.$docsify = {
 };
 
 function initGitalk(vm) {
-  var label, domObj, main, divEle, gitalk;
-
-  label = vm.route.path.split('/').pop();
-  domObj = Docsify.dom;
-  main = domObj.getNode('#main');
+  var label = vm.route.path.replace(/\//g, '-');
+  var containerId = 'gitalk-container' + label;
+  var domObj = Docsify.dom;
+  var _main = domObj.getNode('#main');
 
   Array.apply(null, document.querySelectorAll('div.gitalk-container')).forEach(function (ele) {
     ele.remove();
   });
 
-  gitalkConfig.id = window.md5(window.location.href);
-  divEle = domObj.create('div');
-  divEle.id = 'gitalk-container-' + label;
+  gitalkConfig.id = window.md5(window.location.hash);
+
+  var divEle = domObj.create('div');
+
+  divEle.id = containerId;
   divEle.className = 'gitalk-container';
-  divEle.style = 'width: ' + main.clientWidth + 'px; margin: 0 auto 20px;padding-bottom: 40px;';
+  divEle.style = 'width: ' + _main.clientWidth + 'px; margin: 0 auto 20px;padding-bottom: 40px;';
   domObj.appendTo(domObj.find('.content'), divEle);
-  gitalk = new window.Gitalk(gitalkConfig);
-  gitalk.render('gitalk-container-' + label);
+
+  var gitalk = new window.Gitalk(gitalkConfig);
+  gitalk.render(containerId);
 }
 
 // PWA
