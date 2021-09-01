@@ -95,7 +95,7 @@ function initGitalk(vm) {
     ele.remove();
   });
 
-  gitalkConfig.id = window.md5(window.location.hash);
+  gitalkConfig.id = vm.route.path;
 
   var divEle = domObj.create('div');
 
