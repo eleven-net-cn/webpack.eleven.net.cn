@@ -4,6 +4,6 @@ var gitalk = new window.Gitalk({
   repo: 'webpack.eleven.net.cn',
   owner: 'eleven-net-cn',
   admin: ['eleven-net-cn'],
-  distractionFreeMode: true,
+  distractionFreeMode: false,
   proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
 });
