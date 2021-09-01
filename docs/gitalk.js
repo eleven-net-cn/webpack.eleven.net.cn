@@ -4,7 +4,7 @@ var gitalk = new window.Gitalk({
   repo: 'webpack.eleven.net.cn',
   owner: 'eleven-net-cn',
   admin: ['eleven-net-cn'],
-  id: window.md5(window.location.href),
+  id: window.md5(window.location.hash),
   distractionFreeMode: false,
   proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
 });
