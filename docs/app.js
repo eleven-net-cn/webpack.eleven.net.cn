@@ -2,12 +2,12 @@
 
 window.$docsify = {
   el: '#app',
-  name: 'webpack.eleven.net.cn',
+  name: 'Webpack 搭建指南',
   nameLink: '/',
   repo: 'true',
   // routerMode: 'history',
   corner: {
-    url: 'https://github.com/eleven-net-cn/webpack.eleven.net.cn',
+    url: 'https://github.com/eleven-net-cn/webpack-template',
     icon: 'github',
   },
   logo: '',
