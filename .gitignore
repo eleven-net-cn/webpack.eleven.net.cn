@@ -15,7 +15,4 @@ yarn-error.log*
 # eslint cache
 .eslintcache
 
-.replit
-.gitpod
-
 package-lock.json
