@@ -38,7 +38,10 @@
        [
          "@babel/plugin-transform-runtime",
          {
-           "corejs": 2 // 推荐
+           "corejs": {
+             "version": require('@babel/runtime-corejs3/package.json').version, 
+             "proposals": true,
+           }
          }
        ]
      ]

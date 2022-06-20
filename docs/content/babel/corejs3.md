@@ -79,10 +79,12 @@
             "@babel/plugin-transform-runtime",
             {
               "corejs": {
-                "version": 3,
+                "version": require('@babel/runtime-corejs3/package.json').version,
                 // Another notable change is the support of ECMAScript proposals. By default, @babel/plugin-transform-runtime does not inject polyfills for proposals and use entry points which do not include them but, exactly as you can do in @babel/preset-env, you can set the proposals flag to enable them: corejs: { version: 3, proposals: true }.
                 "proposals": true
               },
+              // 根据输出的模块格式选择 useESModules 值
+              // esm ☞ true，输出其它格式 ☞ false
               "useESModules": true
             }
           ]
