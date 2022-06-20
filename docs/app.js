@@ -63,7 +63,7 @@ window.$docsify = {
   // },
   plugins: [
     window.EditOnGithubPlugin.create(
-      'https://github.com/eleven-net-cn/webpack.eleven.net.cn/edit/main/docs/',
+      'https://github.com/eleven-net-cn/webpack.eleven.net.cn/edit/master/docs/',
       null,
       '📝&nbsp;编辑',
     ),
