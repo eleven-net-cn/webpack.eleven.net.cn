@@ -39,7 +39,7 @@
          "@babel/plugin-transform-runtime",
          {
            "corejs": {
-             "version": require('@babel/runtime-corejs3/package.json').version, 
+             "version": 2, 
              "proposals": true,
            }
          }
