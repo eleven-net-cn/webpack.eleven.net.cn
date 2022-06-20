@@ -84,7 +84,7 @@
                 "proposals": true
               },
               "version": require('@babel/runtime-corejs3/package.json').version,
-              // 根据输出的模块格式选择 useESModules 值
+              // 根据输出的模块格式选择 useESModules 值，当设置为 true，编译后的代码中将会引入 esm 格式的 helper 函数，例如：import _slicedToArray from '@babel/runtime-corejs3/helpers/esm/slicedToArray';
               // esm ☞ true，输出其它格式 ☞ false
               // 从 v7.13.0 版本开始，废弃 useESModules 参数：https://babeljs.io/docs/en/babel-plugin-transform-runtime#useesmodules
               "useESModules": true
