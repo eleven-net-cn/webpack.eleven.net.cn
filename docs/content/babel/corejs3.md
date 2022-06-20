@@ -85,6 +85,7 @@
               },
               // 根据输出的模块格式选择 useESModules 值
               // esm ☞ true，输出其它格式 ☞ false
+              // 从 v7.13.0 版本开始，废弃 useESModules 参数：https://babeljs.io/docs/en/babel-plugin-transform-runtime#useesmodules
               "useESModules": true
             }
           ]
