@@ -2,11 +2,15 @@
   "private": true,
   "name": "webpack.eleven.net.cn",
   "scripts": {
-    "serve": "docsify serve docs --open=true"
+    "serve": "docsify serve docs --open"
   },
   "author": "Eleven",
   "license": "ISC",
   "devDependencies": {
-    "docsify-cli": "^4.4.3"
+    "docsify-cli": "^4.4.4"
+  },
+  "volta": {
+    "node": "22.18.0",
+    "pnpm": "10.12.1"
   }
 }

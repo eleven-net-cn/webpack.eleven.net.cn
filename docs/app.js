@@ -2,7 +2,7 @@
 
 window.$docsify = {
   el: '#app',
-  name: 'Webpack 搭建指南',
+  name: 'Webpack Guide',
   nameLink: '/',
   repo: 'true',
   // routerMode: 'history',
